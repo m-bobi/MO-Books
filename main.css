@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-color);
+}
+
+.container {
+    background-color: var(--section-color);
+    width: auto;
+    height: 700px;
+    margin: 10px;
+    border-radius: 10px;
+}
