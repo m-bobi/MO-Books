@@ -28,6 +28,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--main-color);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
 }
 
 a:hover {
@@ -40,3 +45,9 @@ input:focus {}
 
 input[type="submit"],
 input[type="button"] {}
+
+body::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+}

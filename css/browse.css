@@ -327,7 +327,7 @@ i.fa-star.rating {
 
 
 .container {
-    background-color: #c05a34;
+    background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     padding: 0 8px;
@@ -335,7 +335,7 @@ i.fa-star.rating {
 
 .sectionWhite {
     border-radius: 11px;
-    background-color: #fffdf6;
+    background-color: var(--section-color);
     display: flex;
     flex-direction: column;
     margin: 12px 0 48px;
@@ -351,13 +351,12 @@ i.fa-star.rating {
 }
 
 .mainHeaderLogo {
-    align-self: center;
+    position: relative;
     display: flex;
     width: 100%;
     max-width: 1292px;
     align-items: start;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 50%;
 }
 
 @media (max-width: 991px) {
@@ -381,7 +380,8 @@ i.fa-star.rating {
     display: flex;
     flex-grow: 1;
     flex-basis: 0%;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: space-around;
 }
 
 @media (max-width: 991px) {
@@ -406,7 +406,7 @@ i.fa-star.rating {
 
 .search {
     border-radius: 20px;
-    background-color: #f1f0eb;
+    background-color: var(--extraColor);
     display: flex;
     flex-grow: 1;
     flex-basis: 0%;
@@ -426,7 +426,7 @@ i.fa-star.rating {
     object-fit: contain;
     object-position: center;
     width: 27px;
-    fill: #c05a34;
+    fill: var(--main-color);
     overflow: hidden;
     max-width: 100%;
 }
@@ -473,10 +473,10 @@ i.fa-star.rating {
 }
 
 .div-8 {
-    background-color: #c05a34;
+    background-color: var(--main-color);
     align-self: stretch;
-    height: 2px;
-    margin: 30px -20px 0 0;
+    height: 3px;
+    margin: 30px 0 0;
 }
 
 @media (max-width: 991px) {
