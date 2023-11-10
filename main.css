@@ -7,9 +7,147 @@ body {
 }
 
 .container {
+    border-radius: 11px;
     background-color: var(--section-color);
-    width: auto;
-    height: 700px;
-    margin: 10px;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    padding: 30px 0 550px;
+}
+
+
+@media (max-width: 991px) {
+    .sectionWhite {
+        max-width: 100%;
+        padding-bottom: 100px;
+        margin: 0 5px 40px 0;
+    }
+}
+
+.mainHeaderLogo {
+    display: flex;
+    width: 100%;
+    max-width: 1292px;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50%;
+}
+
+@media (max-width: 991px) {
+    .mainHeaderLogo {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+.img {
+    aspect-ratio: 1.16;
+    object-fit: contain;
+    object-position: center;
+    width: 107px;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.mainHeader {
+    align-self: stretch;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+}
+
+@media (max-width: 991px) {
+    .mainHeader {
+        max-width: 100%;
+    }
+}
+
+.mainHeaderExtras {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+@media (max-width: 991px) {
+    .mainHeaderExtras {
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.search {
+    border-radius: 20px;
+    background-color: #f1f0eb;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+    align-items: end;
+    padding: 10px 20px 16px;
+}
+
+@media (max-width: 991px) {
+    .search {
+        max-width: 100%;
+    }
+}
+
+.img-2 {
+    aspect-ratio: 1.08;
+    object-fit: contain;
+    object-position: center;
+    width: 27px;
+    fill: #c05a34;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .img-2 {
+        margin-right: -4px;
+    }
+}
+
+.img-3 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 37px;
+    overflow: hidden;
+    align-self: start;
+    max-width: 100%;
+}
+
+.img-4 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 39px;
+    fill: #c05a34;
+    overflow: hidden;
+    align-self: start;
+    max-width: 100%;
+}
+
+.navBar {
+    color: #c05a34;
+    max-width: 720px;
+    align-self: start;
+    margin: 32px 0 0 53px;
+    font: 400 28px Inter, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .navBar {
+        max-width: 100%;
+    }
+}
+
+.div-8 {
+    background-color: #c05a34;
+    align-self: stretch;
+    height: 3px;
+    margin: 30px 0 0 0;
 }
