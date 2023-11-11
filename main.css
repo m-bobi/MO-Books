@@ -201,9 +201,16 @@ body {
     font: 400 50px Inter, sans-serif;
 }
 
+.img-6 {
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+    width: 100%;
+}
 
-.img-5 {
-    color: #c05a34;
-    /* margin: 33px 0 0 180px; */
-    font: 400 20px Inter, sans-serif;
+.sectionWhiteTwo {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    background-color: var(--section-color);
+    margin-top: -5px;
+    padding: 31px 20px 500px;
 }
