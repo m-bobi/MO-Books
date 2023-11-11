@@ -6,6 +6,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 :root {
     --main-color: #C05A34;
     --section-color: #FFFDF6;

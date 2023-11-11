@@ -202,7 +202,7 @@ a.hide:hover {
     display: flex;
     flex-direction: column;
     margin: 12px 0 48px;
-    padding: 31px 20px 530px;
+    padding: 31px 20px 100px;
 }
 
 @media (max-width: 991px) {
@@ -214,12 +214,12 @@ a.hide:hover {
 }
 
 .mainHeaderLogo {
-    position: relative;
     display: flex;
     width: 100%;
-    max-width: 1292px;
+
     align-items: start;
-    gap: 50%;
+    justify-content: space-evenly;
+    gap: 5%;
 }
 
 @media (max-width: 991px) {
@@ -243,8 +243,7 @@ a.hide:hover {
     display: flex;
     flex-grow: 1;
     flex-basis: 0%;
-    flex-direction: column-reverse;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
 @media (max-width: 991px) {
@@ -256,7 +255,7 @@ a.hide:hover {
 .mainHeaderExtras {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
 }
 
 @media (max-width: 991px) {
@@ -269,13 +268,19 @@ a.hide:hover {
 
 .search {
     border-radius: 20px;
-    background-color: var(--extraColor);
+    background-color: #f1f0eb;
+    border-style: none;
     display: flex;
     flex-grow: 1;
     flex-basis: 0%;
     flex-direction: column;
     align-items: end;
     padding: 10px 20px 16px;
+}
+
+.search:active {
+    background-color: #f1f0eb;
+    border-style: none;
 }
 
 @media (max-width: 991px) {
@@ -289,7 +294,7 @@ a.hide:hover {
     object-fit: contain;
     object-position: center;
     width: 27px;
-    fill: var(--main-color);
+    fill: #c05a34;
     overflow: hidden;
     max-width: 100%;
 }
@@ -322,11 +327,26 @@ a.hide:hover {
 }
 
 .navBar {
+    display: flex;
+    justify-content: center;
     color: #c05a34;
-    max-width: 720px;
-    align-self: start;
-    margin: 32px 0 0 53px;
-    font: 400 28px Inter, sans-serif;
+    margin: 33px 0 0 -100px;
+    font: 400 20px Inter, sans-serif;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.navBar a {
+    color: var(--main-color);
+}
+
+@media (max-width: 700px) {
+    .navBar {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 991px) {
@@ -336,16 +356,10 @@ a.hide:hover {
 }
 
 .div-8 {
-    background-color: var(--main-color);
+    background-color: #c05a34;
     align-self: stretch;
     height: 3px;
     margin: 30px 0 0;
-}
-
-@media (max-width: 991px) {
-    .div-8 {
-        max-width: 100%;
-    }
 }
 
 .img-5 {
