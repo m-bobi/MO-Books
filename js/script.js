@@ -32,121 +32,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-console.clear();
+var slideIndex = 0;
+carousel();
 
-var slideDelay = 1500;
-var slideDuration = 300;
-
-var slides = document.querySelectorAll(".slide");
-var prevButton = document.querySelector("#prevButton");
-var nextButton = document.querySelector("#nextButton");
-
-var numSlides = slides.length;
-
-for (var i = 0; i < numSlides; i++) {
-    slides[i].style.backgroundColor = "#" + (Math.random() * 0xffffff).toString(16).slice(0, 6);
-    slides[i].style.left = i * 100 + "%";
-}
-
-var wrap = wrapPartial(-100, (numSlides - 1) * 100);
-var timer;
-
-var animation = TweenMax.to(slides, 1, {
-    x: "+=" + (numSlides * 100) + "%",
-    ease: Linear.easeNone,
-    paused: true,
-    repeat: -1,
-    modifiers: {
-        x: wrap
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
     }
-});
-
-var proxy = document.createElement("div");
-proxy.style.transform = "translateX(0)";
-var slideAnimation;
-var transform;
-var slideWidth = 0;
-var wrapWidth = 0;
-resize();
-
-var isDragging = false;
-var isThrowing = false;
-
-document.querySelector(".slides-container").addEventListener("mousedown", function () {
-    isDragging = true;
-    isThrowing = false;
-    timer && timer.restart(true);
-    slideAnimation && slideAnimation.kill();
-});
-
-document.querySelector(".slides-container").addEventListener("mousemove", function () {
-    if (isDragging) updateDraggable();
-});
-
-document.addEventListener("mouseup", function () {
-    isDragging = false;
-    if (isThrowing) {
-        timer && timer.restart(true);
-    } else {
-        animateSlides(-1);
-    }
-});
-
-function updateDraggable() {
-    isDragging = true;
-    isThrowing = false;
-    timer && timer.restart(true);
-    slideAnimation && slideAnimation.kill();
+    slideIndex++;
+    if (slideIndex > x.length) { slideIndex = 1 }
+    x[slideIndex - 1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
 }
-
-function animateSlides(direction) {
-    timer && timer.restart(true);
-    slideAnimation && slideAnimation.kill();
-    var x = snapX(transform.x + direction * slideWidth);
-    slideAnimation = TweenLite.to(proxy, slideDuration / 1000, {
-        x: x,
-        onUpdate: updateProgress
-    });
-}
-
-function autoPlay() {
-    if (isDragging || isThrowing) {
-        timer && timer.restart(true);
-    } else {
-        animateSlides(-1);
-    }
-}
-
-function updateProgress() {
-    animation.progress(transform.x / wrapWidth);
-}
-
-function snapX(x) {
-    return Math.round(x / slideWidth) * slideWidth;
-}
-
-function resize() {
-    var norm = (transform.x / wrapWidth) || 0;
-    slideWidth = slides[0].offsetWidth;
-    wrapWidth = slideWidth * numSlides;
-    proxy.style.transform = "translateX(" + (norm * wrapWidth) + "px)";
-    animateSlides(0);
-    slideAnimation && slideAnimation.progress(1);
-}
-
-function wrapPartial(min, max) {
-    var r = max - min;
-    return function (value) {
-        var v = value - min;
-        return ((r + (v % r)) % r) + min;
-    };
-}
-
-prevButton.addEventListener("click", function () {
-    animateSlides(1);
-});
-
-nextButton.addEventListener("click", function () {
-    animateSlides(-1);
-});
-
