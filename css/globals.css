@@ -16,6 +16,8 @@ a {
     --text-colorOnWhiteBG: #C05A34;
     --text-colorOnDifferentBG: #FFFDF6;
     --extraColor: #FFF6D9;
+
+    --primaryFont: "Inter", sans-serif;
 }
 
 ::selection {
