@@ -6,7 +6,7 @@ a {
 
 .sectionWhite {
     background-color: var(--section-color);
-    width: 100%;
+    width: 100vw;
     height: 2000px;
     border: 10px solid var(--main-color);
 }
@@ -21,6 +21,7 @@ a {
 
 .searchBar {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-left: 5%;
 }
@@ -36,6 +37,7 @@ a {
     border-style: none;
     display: flex;
     flex-grow: 1;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: end;
     padding: 10px 20px 16px;
@@ -58,6 +60,18 @@ a {
     margin-left: 10px;
 }
 
+@media screen and (max-width:991px) {
+    .partOne p {
+        font-size: 8px;
+    }
+
+    .img-5 {
+        height: 220px;
+        width: 240px;
+    }
+}
+
+
 .div-8 {
     background-color: #c05a34;
     align-self: stretch;
@@ -70,6 +84,7 @@ a {
     justify-content: flex-start;
     margin-top: 1%;
     margin-left: 5%;
+    flex-wrap: wrap;
     align-items: start;
     gap: 11.7%;
 }
@@ -82,6 +97,7 @@ a {
 .sectionOne {
     padding-top: 100px;
     padding-left: 0px;
+    flex-wrap: wrap;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -95,12 +111,16 @@ a {
 } */
 
 .partOne {
+    display: flex;
     margin-right: 10%;
     justify-content: space-between;
+    flex-direction: column;
+    line-height: 0;
 }
 
 .title {
     font: 400 50px Inter, sans-serif;
+    margin: 0;
 }
 
 .div-9 {
@@ -121,15 +141,19 @@ a {
     padding-top: 30px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
-.quote pre {
-    display: block;
+.quote p {
+    display: flex;
     color: var(--main-color);
     font: 400 34.5px Inter, sans-serif;
+    margin: 0;
 }
 
-pre b {
+p b {
     font: 600 34.5px Inter, sans-serif;
 }
 
@@ -137,7 +161,7 @@ pre b {
     background-color: #c05a34;
     align-self: stretch;
     height: 5px;
-    margin: -10px 0 0;
+    margin: 30px 0 0;
 }
 
 .sec {
@@ -159,4 +183,65 @@ pre b {
 
 .view {
     font: 700 20px Inter, sans-serif;
+}
+
+.newReleases {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+.box {
+    background-color: pink;
+    height: 555px;
+    width: 290px;
+    border-radius: 10px;
+}
+
+.book1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box img {
+    margin-top: 10%;
+    height: 355px;
+    width: 250px;
+}
+
+.bio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bookTitle {
+    font: 600 20px Inter, sans-serif;
+}
+
+.author {
+    font: 600 10px Inter, sans-serif;
+    color: #c05a34;
+}
+
+.price {
+    font: 400 34.5px Inter, sans-serif;
+}
+
+.btnc {
+    border-radius: 10px;
+    border-style: none;
+    background-color: #c05a34;
+    font: 400 20px Inter, sans-serif;
+    color: white;
+    padding: 10px;
+    width: 250px;
 }
