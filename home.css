@@ -4,17 +4,20 @@ a {
     text-decoration: none;
 }
 
-body {
-    background-color: var(--main-color);
-}
-
 .sectionWhite {
     background-color: var(--section-color);
-    width: 98.9%;
+    width: 100%;
     height: 2000px;
-    margin-top: 10px;
-    margin-left: 10px;
+    border: 10px solid var(--main-color);
 }
+
+/* 
+@media screen and (max-width:991px) {
+    .sectionWhite {
+        max-width: 100%;
+        margin: 0;
+    }
+} */
 
 .searchBar {
     display: flex;
@@ -68,12 +71,12 @@ body {
     margin-top: 1%;
     margin-left: 5%;
     align-items: start;
-    gap: 10%;
+    gap: 11.7%;
 }
 
 .navBar a {
     color: var(--main-color);
-    font: 400 34.5px Inter, sans-serif;
+    font: 400 30px Inter, sans-serif;
 }
 
 .sectionOne {
@@ -84,6 +87,12 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* @media screen and (max-width: 991px) {
+    .sectionOne {
+        flex-direction: column;
+    }
+} */
 
 .partOne {
     margin-right: 10%;
