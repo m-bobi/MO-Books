@@ -234,21 +234,6 @@ a.hide:hover {
     }
 }
 
-.mainHeaderLogo {
-    display: flex;
-    width: 100%;
-
-    align-items: start;
-    justify-content: space-evenly;
-    gap: 5%;
-}
-
-@media (max-width: 991px) {
-    .mainHeaderLogo {
-        max-width: 100%;
-        flex-wrap: wrap;
-    }
-}
 
 .img {
     aspect-ratio: 1.16;
@@ -257,34 +242,6 @@ a.hide:hover {
     width: 107px;
     overflow: hidden;
     max-width: 100%;
-}
-
-.mainHeader {
-    align-self: stretch;
-    display: flex;
-    flex-grow: 1;
-    flex-basis: 0%;
-    flex-direction: column;
-}
-
-@media (max-width: 991px) {
-    .mainHeader {
-        max-width: 100%;
-    }
-}
-
-.mainHeaderExtras {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-@media (max-width: 991px) {
-    .mainHeaderExtras {
-        max-width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 }
 
 .search {
@@ -308,6 +265,32 @@ a.hide:hover {
     .search {
         max-width: 100%;
     }
+}
+
+.searchBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 5%;
+}
+
+
+.logo {
+    font: 700 40px Inter, sans-serif;
+    margin-right: 20px;
+}
+
+
+.icons {
+    margin-right: 5%;
+}
+
+.img-3 {
+    margin-left: 30px;
+}
+
+.img-4 {
+    margin-left: 10px;
 }
 
 .img-2 {
@@ -349,32 +332,19 @@ a.hide:hover {
 
 .navBar {
     display: flex;
-    justify-content: center;
-    color: #c05a34;
-    margin: 33px 0 0 -100px;
-    font: 400 20px Inter, sans-serif;
-    align-content: center;
+    justify-content: flex-start;
+    margin-top: 1%;
+    margin-left: 5%;
     flex-wrap: wrap;
     align-items: start;
-    flex-direction: row;
-    gap: 10%;
+    gap: 11.7%;
 }
 
 .navBar a {
     color: var(--main-color);
+    font: 400 30px Inter, sans-serif;
 }
 
-@media (max-width: 700px) {
-    .navBar {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 991px) {
-    .navBar {
-        max-width: 100%;
-    }
-}
 
 .div-8 {
     background-color: #c05a34;
