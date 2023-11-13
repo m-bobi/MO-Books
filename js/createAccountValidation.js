@@ -1,16 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var username = localStorage.getItem('username');
-    if (username) {
-        document.getElementById('username').value = username;
-    }
-
-    document.getElementById('popup').style.display = 'block';
-
-    setTimeout(function () {
-        closePopup();
-    }, 2000);
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const username = document.querySelector('.formInput').value;
+        localStorage.setItem('username', username);
+        window.location.href = '/home.html';
+    });
 });
-
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
