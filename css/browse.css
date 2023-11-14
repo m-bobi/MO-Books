@@ -11,7 +11,6 @@
     justify-content: space-evenly;
     overflow: hidden;
     flex-wrap: wrap;
-
     padding: 100px 0px 100px 0px;
 }
 
@@ -32,7 +31,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 240px;
-    width: 100%;
+    margin: 0;
     position: relative;
     background-position: center center;
 }
