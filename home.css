@@ -79,13 +79,11 @@ a {
     margin: 5px 0 0;
 }
 
+
 .navBar {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 1%;
-    margin-left: 5%;
-    flex-wrap: wrap;
-    align-items: start;
+    justify-content: center;
+    margin-top: 1.2%;
     gap: 11.7%;
 }
 
