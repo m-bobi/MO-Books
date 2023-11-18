@@ -13,7 +13,7 @@
     height: 97vh;
 }
 
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
     .sectionWhite {
         max-width: 100%;
         padding-bottom: 100px;
@@ -34,6 +34,39 @@
     background-color: var(--extraColor);
     width: 30%;
     height: 100%;
+}
+
+
+@media screen and (max-width: 991px) {
+    .sectionLeft .leftText h2 {
+        font-size: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .sectionLeft {
+        width: 100%;
+        height: 120%;
+    }
+
+    .profileTitle h1 {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .sectionLeft .leftText h2 {
+        font-size: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .sectionLeft {
+        width: 100%;
+        height: 120%;
+    }
+
+    .profileTitle h1 {
+        font-size: small;
+    }
 }
 
 .leftText {
