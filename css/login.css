@@ -18,7 +18,6 @@
     .sectionWhite {
         max-width: 100%;
         padding-bottom: 100px;
-        margin: 0 5px 40px 0;
     }
 }
 
@@ -35,6 +34,53 @@
     width: 30%;
     height: 100%;
 }
+
+@media (max-width: 991px) {
+    .sectionLeft .leftText h2{
+        font-size: 1.8rem;
+        flex-wrap: wrap;
+    }
+
+    .sectionLeft{
+        width: 100%;
+        height: 112.7%;
+    }
+}
+
+@media (max-width: 650px) {
+    .sectionLeft .leftText h2{
+        font-size: 1.8rem;
+        flex-wrap: wrap;
+    }
+
+    .sectionLeft{
+        width: 100%;
+        height: 112.7%;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .sectionLeft .leftText h2{
+        font-size: 1.8rem;
+        flex-wrap: wrap;
+    }
+
+    .sectionLeft{
+        width: 100%;
+        height: 112.7%;
+    }
+
+    .sectionRight{
+        width: 40%;
+    }
+
+    .formGroup{
+        width: 20%;
+    }
+}
+
+
 
 .leftText {
     display: flex;
