@@ -11,7 +11,7 @@ function carousel() {
     }
     slideIndex++;
     if (slideIndex > x.length) { slideIndex = 1 }
-    x[slideIndex - 1].style.display = "block";
+    // x[slideIndex - 1].style.display = "block";
     setTimeout(carousel, 2000); // Change image every 2 seconds
 }
 
@@ -39,4 +39,27 @@ document.addEventListener('DOMContentLoaded', function () {
             navBar.classList.remove('active');
         }
     });
+});
+
+
+// ---------------------- USER VALIDATION
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accountCreated = localStorage.getItem('accountCreated');
+
+    if (accountCreated === 'true') {
+        // User has created an account, replace the user image
+        // Assuming 'userImage' is the ID of the image element
+        const userImage = document.getElementById('userImage');
+
+        // Update the image source
+        userImage.src = '/resources/logos/panda.png';
+
+        // Apply styles to the userImage
+        userImage.style.backgroundColor = '#C05A34';
+        userImage.style.borderRadius = '60px';
+        userImage.style.height = '60px';
+        userImage.style.width = '60px';
+
+    }
 });

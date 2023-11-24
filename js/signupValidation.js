@@ -15,7 +15,11 @@ document.getElementById('signupForm').addEventListener('submit', function (event
         alert('Passwords do not match.');
     } else {
 
+        localStorage.setItem('accountCreated', true);
+        localStorage.setItem('userEmail', email);
+        // Set the username in localStorage
         localStorage.setItem('username', email);
+
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('popup').style.display = 'block';
 
@@ -25,8 +29,8 @@ document.getElementById('signupForm').addEventListener('submit', function (event
             window.location.href = '/html/createAccount.html';
         }, 2000);
     }
-
 });
+
 
 function isValidEmail(email) {
     var emailRegex = /\S+@\S+\.\S+/;

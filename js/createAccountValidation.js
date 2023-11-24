@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const username = document.querySelector('.formInput').value;
         localStorage.setItem('username', username);
+        localStorage.setItem('accountCreated', true);
         window.location.href = '/home.html';
     });
 });
