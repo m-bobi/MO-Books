@@ -6,10 +6,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-a {
-    text-decoration: none;
-}
-
 :root {
     --main-color: #C05A34;
     --section-color: #FFFDF6;
@@ -24,11 +20,8 @@ a {
     background-color: rgb(202, 76, 76);
 }
 
-i {
-    font-size: 20px;
-}
 
-/* 4. Elements - HTML Elements of the page h1-h6, etc. */
+/* Elements - HTML Elements of the page h1-h6, etc. */
 
 body {
     margin: 0;
@@ -39,6 +32,14 @@ body {
     /* Firefox */
     -ms-overflow-style: none;
     /* Internet Explorer 10+ */
+}
+
+i {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
 }
 
 a:hover {
