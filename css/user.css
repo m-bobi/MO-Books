@@ -1,0 +1,49 @@
+.container {
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    height: 0;
+}
+
+.sectionWhite {
+    background-color: var(--section-color);
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0 48px;
+    height: 97vh;
+}
+
+@media (max-width: 991px) {
+    .sectionWhite {
+        max-width: 100%;
+        padding-bottom: 100px;
+    }
+}
+
+.sections {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formGroup input {
+    background-color: var(--extraColor);
+    border-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+}
+
+.formGroup {
+    padding: 20px;
+}
