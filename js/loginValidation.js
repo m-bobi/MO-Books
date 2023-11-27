@@ -1,26 +1,42 @@
+// ------------ SIGNIN VALIDATION
+
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    const storedEmail = localStorage.getItem('userEmail');
+    const enteredEmail = document.getElementById('email').value;
+    const accountCreated = localStorage.getItem('accountCreated');
 
-
-    if (!email || !password) {
-
-        alert('Please fill in both email and password.');
-    } else if (!isValidEmail(email)) {
-
-        alert('Please enter a valid email address.');
+    if (accountCreated === null || accountCreated === 'false') {
+        // If accountCreated is not set or false, prompt the user to sign up
+        alert("Please sign up first!");
+    } else if (enteredEmail !== storedEmail) {
+        alert('Invalid email. Please enter the correct email address.');
     } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
 
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('popup').style.display = 'block';
+        if (!email || !password) {
+            alert('Please fill in both email and password.');
+        } else if (!isValidEmail(email)) {
+            alert('Please enter a valid email address.');
+        } else {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
 
-        setTimeout(function () {
-            closePopup();
-            document.getElementById('overlay').style.display = 'none';
-            window.location.href = '/home.html';
-        }, 2000);
+            if (enteredEmail === storedEmail) {
+                localStorage.setItem('accountCreated', 'true');
+            } else {
+                localStorage.setItem('accountCreated', 'false');
+            }
+
+
+            setTimeout(function () {
+                closePopup();
+                document.getElementById('overlay').style.display = 'none';
+                window.location.href = '/home.html';
+            }, 2000);
+        }
     }
 });
 
@@ -33,4 +49,3 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 }
-

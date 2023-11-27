@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>MO' Books</title>
+    <title>Browse | MO' BOOKS</title>
     <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/globals.css" />
     <link rel="stylesheet" href="/css/browse.css" />
@@ -29,8 +29,8 @@
                         <div class="icons">
                             <a href="cart.html"><img loading="lazy" src="/resources/logos/shopping.png"
                                     class="img-3" /></a>
-                            <a href="login.html"><img loading="lazy" src="/resources/logos/user.png"
-                                    class="img-4" /></a>
+                            <a href="login.html"><img loading="lazy" src="/resources/logos/user.png" class="img-4"
+                                    id="userImage" /></a>
                         </div>
                     </div>
                     <hr class="div-8">
@@ -49,7 +49,7 @@
                 <div class="div-9">Books</div>
                 <div class="div-10"></div>
 
-                <div class="product">
+                <div class="product" id="product-1">
                     <div class="product-image">
                         <img src="/resources/0005000211.jpg">
                     </div>
@@ -65,14 +65,15 @@
                             quos.
                             Rem, dolore. Dicta fugit doloremque quis tempore, expedita ab.</p>
                     </div>
-                    <div class="product-line-price"><span>$12.99</span>
+                    <div class="product-line-price"><span>$5.99</span>
                         <button class="add-to-cart-button"
-                            onclick="addToCart('KOSOVO, A SHORT STORY', 12.99, '/resources/0005000211.jpg' )">Add to
+                            onclick="addToCart('product-1', 'KOSOVO, A SHORT STORY', 5.99, '/resources/0005000211.jpg')">Add
+                            to
                             Cart</button>
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product" id="product-2">
                     <div class="product-image">
                         <img src="/resources/0005000197.jpg">
                     </div>
@@ -88,9 +89,10 @@
                             eaque,
                             sint id, accusantium, saepe earum eius sequi rem.</p>
                     </div>
-                    <div class="product-line-price"><span>$12.99</span>
+                    <div class="product-line-price"><span>$9.99</span>
                         <button class="add-to-cart-button"
-                            onclick="addToCart('KOSOVO, A SHORT STORY', 12.99, '/resources/0005000211.jpg' )">Add to
+                            onclick="addToCart('product-2', 'PRESENT INDICATIVE', 9.99, '/resources/0005000197.jpg')">Add
+                            to
                             Cart</button>
                     </div>
                 </div>
@@ -305,10 +307,9 @@
         </div>
         </div>
     </footer>
-    <div class="copyright">© 2023 - E-commerce by Dega</div>
 
 
-    <script src="/js/script.js"></script>
+    <script src="/js/browse.js"></script>
 </body>
 
 </html>

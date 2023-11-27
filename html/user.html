@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="/css/globals.css">
+    <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
+
+
+    <title>User | MO' BOOKS</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sectionWhite">
+
+
+            <header>
+                <div class="searchBar">
+                    <div class="logo-toggle">
+                        <h1 class="logo">MO'</h1>
+                        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+                    </div>
+                    <input type="text" class="search" placeholder="Search for ISBN, name, author">
+                    <div class="icons">
+                        <a href="cart.html"><img loading="lazy" src="/resources/logos/shopping.png" class="img-3" /></a>
+                        <a href="login.html"><img loading="lazy" src="/resources/logos/user.png" class="img-4"
+                                id="userImage" /></a>
+                    </div>
+                </div>
+                <hr class="div-8">
+                </hr>
+                <div class="navBar">
+                    <a href="/home.html">HOME</a>
+                    <a href="#">BROWSE</a>
+                    <a href="">NEW RELEASES</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+            </header>
+
+
+            <aside class="sections">
+                <div class="sectionRight">
+                    <!-- User Image and Name -->
+                    <div class="userDetails">
+                        <img src="/resources/logos/panda.png" alt="User Image" class="userImage">
+                        <h2 id="userName"></h2>
+                    </div>
+
+                    <!-- Additional Information Form -->
+                    <form id="userInfoForm">
+                        <h2>Add Additional Information</h2>
+
+                        <!-- Address Input -->
+                        <div class="formGroup">
+                            <input type="text" id="address" name="address" placeholder="Enter your address">
+                        </div>
+
+                        <!-- Work Place Input -->
+                        <div class="formGroup">
+                            <input type="text" id="workPlace" name="workPlace" placeholder="Enter your work place">
+                        </div>
+
+
+                        <!-- Birthdate Input -->
+                        <div class="formGroup">
+                            <input type="date" id="birthdate" name="birthdate">
+                        </div>
+
+                        <!-- Button to Save Changes -->
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="/js/user.js" defer></script>
+</body>
+
+</html>
