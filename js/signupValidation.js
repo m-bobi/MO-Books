@@ -17,8 +17,7 @@ document.getElementById('signupForm').addEventListener('submit', function (event
 
         localStorage.setItem('accountCreated', true);
         localStorage.setItem('userEmail', email);
-        // Set the username in localStorage
-        localStorage.setItem('username', email);
+        // localStorage.setItem('username', email);
 
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('popup').style.display = 'block';

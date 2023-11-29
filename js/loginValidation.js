@@ -1,4 +1,4 @@
-// ------------ SIGNIN VALIDATION
+// ------------ LOGIN VALIDATION
 
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -8,7 +8,6 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const accountCreated = localStorage.getItem('accountCreated');
 
     if (accountCreated === null || accountCreated === 'false') {
-        // If accountCreated is not set or false, prompt the user to sign up
         alert("Please sign up first!");
     } else if (enteredEmail !== storedEmail) {
         alert('Invalid email. Please enter the correct email address.');
