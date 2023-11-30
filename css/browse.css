@@ -5,6 +5,8 @@
 ----------------------------*/
 .mySlides {
     padding-top: 2%;
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
@@ -16,6 +18,14 @@
 
 .product-title h1 {
     font-size: 1.5rem;
+}
+
+.product-title {
+    color: var(--main-color);
+}
+
+.product-title h2 {
+    text-decoration: underline;
 }
 
 .product {
@@ -70,6 +80,7 @@
     font-weight: 600;
     color: var(--section-color);
     border-style: none;
+    cursor: pointer;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
@@ -77,6 +88,9 @@
     -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
 }
 
+.add-to-cart-button:hover {
+    background-color: #c05934cf;
+}
 
 
 .product .product-details .product-title {
@@ -91,11 +105,6 @@
 
 /* Make adjustments for tablet */
 @media screen and (max-width: 650px) {
-
-    .mySlides {
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
 
     .product {
         flex-direction: column;
@@ -127,10 +136,6 @@
 
 /* Make more adjustments for phone */
 @media screen and (max-width: 350px) {
-    .mySlides {
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
 
     .product {
         flex-direction: column;
