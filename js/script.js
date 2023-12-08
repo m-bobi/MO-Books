@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // ---------------------- USER VALIDATION
 
 document.addEventListener('DOMContentLoaded', function () {
-    \
+
     const accountCreated = localStorage.getItem('accountCreated');
 
     if (accountCreated === 'true') {
