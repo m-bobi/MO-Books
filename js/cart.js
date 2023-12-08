@@ -107,3 +107,24 @@ function updateTotalPrice() {
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
     totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
 }
+
+// ---------------------- USER VALIDATION
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accountCreated = localStorage.getItem('accountCreated');
+
+    if (accountCreated === 'true') {
+        // User has created an account, replace the user image
+        // Assuming 'userImage' is the ID of the image element
+        const userImage = document.getElementById('userImage');
+
+        // Update the image source
+        userImage.src = '/resources/logos/panda.png';
+
+        // Apply styles to the userImage
+        userImage.style.backgroundColor = '#C05A34';
+        userImage.style.borderRadius = '60px';
+        userImage.style.height = '60px';
+        userImage.style.width = '60px';
+    }
+});
