@@ -24,17 +24,10 @@
     }
 } */
 
-
-@media screen and (max-width:991px) {
-    .partOne p {
-        font-size: 8px;
-    }
-
-    .img-5 {
-        height: 220px;
-        width: 240px;
-    }
+.img-5 {
+    max-width: 100%;
 }
+
 
 
 .div-8 {
@@ -57,11 +50,26 @@
     align-items: center;
 }
 
-/* @media screen and (max-width: 991px) {
-    .sectionOne {
-        flex-direction: column;
-    }
-} */
+
+.quote {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote p {
+    display: flex;
+    color: var(--main-color);
+    font: 400 34.5px Inter, sans-serif;
+    margin: 0;
+}
+
+p b {
+    font: 600 34.5px Inter, sans-serif;
+}
 
 .partOne {
     display: flex;
@@ -90,25 +98,7 @@
     border-style: none;
 }
 
-.quote {
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-}
 
-.quote p {
-    display: flex;
-    color: var(--main-color);
-    font: 400 34.5px Inter, sans-serif;
-    margin: 0;
-}
-
-p b {
-    font: 600 34.5px Inter, sans-serif;
-}
 
 .div-11 {
     background-color: #c05a34;
@@ -248,18 +238,6 @@ p b {
     align-items: center;
 }
 
-@media screen and (max-width: 991px) {
-    .newsletter {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .newsLetterText {
-        text-align: center;
-        padding-bottom: 20px;
-    }
-
-}
 
 .newsLetterText h2 {
     font-size: 2.1rem;
@@ -285,7 +263,7 @@ p b {
 }
 
 /* ------------
-    FOOTER
+FOOTER
 --------------- */
 
 
@@ -320,6 +298,10 @@ p b {
 }
 
 
+
+
+/* ------------------- RESPONSIVE */
+
 @media screen and (max-width:991px) {
     .main-footer {
         flex-direction: column;
@@ -328,5 +310,53 @@ p b {
         line-height: 12px;
         text-align: center;
         padding: 15px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .newsletter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsLetterText {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .sec .new {
+        font-size: 1.3rem;
+    }
+
+    .view {
+        font-size: 0.8rem;
+    }
+
+    .box {
+        margin: 40px;
+    }
+
+}
+
+@media screen and (max-width:991px) {
+    .partOne {
+        padding-top: 40px;
+        justify-content: center;
+    }
+
+    .partOne p {
+        font-size: 1.9rem;
+    }
+
+    .sectionOne {
+        flex-direction: column-reverse;
+    }
+
+    .quote p {
+        font-size: 1.3rem;
+    }
+
+    p b {
+        font-size: 1.4rem;
     }
 }
