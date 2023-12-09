@@ -82,5 +82,3 @@ document.addEventListener('DOMContentLoaded', function () {
         userImage.style.width = '60px';
     }
 });
-
-```
