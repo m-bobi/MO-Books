@@ -31,14 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const accountCreated = localStorage.getItem('accountCreated');
 
     if (accountCreated === 'true') {
-        // User has created an account, replace the user image
-        // Assuming 'userImage' is the ID of the image element
+
         const userImage = document.getElementById('userImage');
 
-        // Update the image source
+
         userImage.src = '/resources/logos/panda.png';
 
-        // Apply styles to the userImage
+
         userImage.style.backgroundColor = '#C05A34';
         userImage.style.borderRadius = '60px';
         userImage.style.height = '60px';
