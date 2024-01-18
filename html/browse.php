@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <title>Browse | MO' BOOKS</title>
-    <link rel="stylesheet" href="/css/browse.css" />
-    <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="../css/browse.css" />
+    <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/globals.css" />
 
     <script src="https://kit.fontawesome.com/538a0bacad.js" crossorigin="anonymous"></script>
 
-    <script src="/js/cart.js"></script>
+    <script src="../js/cart.js"></script>
 
 </head>
 
@@ -27,16 +27,16 @@
                         </div>
                         <input type="text" class="search" placeholder="Search for ISBN, name, author">
                         <div class="icons">
-                            <a href="cart.html"><img loading="lazy" src="/resources/logos/shopping.png"
+                            <a href="cart.html"><img loading="lazy" src="../resources/logos/shopping.png"
                                     class="img-3" /></a>
-                            <a href="login.html"><img loading="lazy" src="/resources/logos/user.png" class="img-4"
+                            <a href="login.html"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
                                     id="userImage" /></a>
                         </div>
                     </div>
                     <hr class="div-8">
                     </hr>
                     <div class="navBar">
-                        <a href="/home.html">HOME</a>
+                        <a href="../home.php">HOME</a>
                         <a href="#">BROWSE</a>
                         <a href="">NEW RELEASES</a>
                         <a href="contact.html">CONTACT</a>
@@ -44,14 +44,14 @@
                 </header>
                 <hr class="div-8">
                 </hr>
-                <img class="mySlides" src="/resources/heroBanner2.jpg">
-                <img class="mySlides" src="/resources/bookBanner3.jpg">
+                <img class="mySlides" src="../resources/heroBanner2.jpg">
+                <img class="mySlides" src="../resources/bookBanner3.jpg">
                 <div class="div-9">Books</div>
                 <div class="div-10"></div>
 
                 <div class="product" id="product-1">
                     <div class="product-image">
-                        <img src="/resources/0005000216.jpg" width="340" height="470">
+                        <img src="../resources/0005000216.jpg" width="340" height="470">
                     </div>
                     <div class="product-details">
                         <div class="product-title">
@@ -75,7 +75,7 @@
 
                 <div class="product" id="product-2">
                     <div class="product-image">
-                        <img src="/resources/0005000217.jpg" width="340" height="470">
+                        <img src="../resources/0005000217.jpg" width="340" height="470">
                     </div>
                     <div class="product-details">
                         <div class="product-title">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="product" id="product-3">
                     <div class="product-image">
-                        <img src="/resources/0005000218.jpg" width="340" height="470">
+                        <img src="../resources/0005000218.jpg" width="340" height="470">
                     </div>
                     <div class="product-details">
                         <div class="product-title">
@@ -121,7 +121,7 @@
                 </div>
                 <div class="product" id="product-4">
                     <div class="product-image">
-                        <img src="/resources/0005000219.jpg" width="340" height="470">
+                        <img src="../resources/0005000219.jpg" width="340" height="470">
                     </div>
                     <div class="product-details">
                         <div class="product-title">
@@ -145,7 +145,7 @@
 
                 <div class="product" id="product-5">
                     <div class="product-image">
-                        <img src="/resources/0005000220.jpg" width="340" height="470">
+                        <img src="../resources/0005000220.jpg" width="340" height="470">
                     </div>
                     <div class="product-details">
                         <div class="product-title">
@@ -169,7 +169,7 @@
 
                 <div class="product" id="product-6">
                     <div class="product-image">
-                        <img src="/resources/0005000215.jpg" width="340" height="470">
+                        <img src="../resources/0005000215.jpg" width="340" height="470">
                     </div>
                     <div class="product-details">
                         <div class="product-title">
@@ -193,7 +193,7 @@
 
                 <div class="product" id="product-7">
                     <div class="product-image">
-                        <img src="/resources/0005000221.jpg" width="340" height="470">
+                        <img src="../resources/0005000221.jpg" width="340" height="470">
                     </div>
                     <div class="product-details">
                         <div class="product-title">
@@ -308,7 +308,7 @@
     </footer>
 
 
-    <script src="/js/browse.js"></script>
+    <script src="../js/browse.js"></script>
 </body>
 
 </html>
