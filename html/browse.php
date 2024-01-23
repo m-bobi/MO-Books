@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+
+require '../core/database.php';
+
+if (!isset($_SESSION['admin_name'])) {
+    header('location:../html/login.php');
+    exit();
+}
+
+// Fetch books from the database
+$query = "SELECT * FROM books";
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
+}
+
+$books = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,9 +51,9 @@
                         </div>
                         <input type="text" class="search" placeholder="Search for ISBN, name, author">
                         <div class="icons">
-                            <a href="cart.html"><img loading="lazy" src="../resources/logos/shopping.png"
+                            <a href="cart.php"><img loading="lazy" src="../resources/logos/shopping.png"
                                     class="img-3" /></a>
-                            <a href="login.html"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
+                            <a href="login.php"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
                                     id="userImage" /></a>
                         </div>
                     </div>
@@ -49,172 +73,33 @@
                 <div class="div-9">Books</div>
                 <div class="div-10"></div>
 
-                <div class="product" id="product-1">
-                    <div class="product-image">
-                        <img src="../resources/0005000216.jpg" width="340" height="470">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title">
-                            <h1>THE SUBTLE ART OF NOT GIVING A F*CK
-                            </h1>
-                            <h2>Mark Manson</h2>
+                <?php foreach ($books as $book): ?>
+                    <div class="product" id="product-<?php echo $book['id']; ?>">
+                        <div class="product-image">
+                            <img src="<?php echo $book['cover_image']; ?>" width="340" height="470">
                         </div>
-                        <p class="product-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            Totam
-                            perferendis libero dolore quis exercitationem illum enim eveniet! Alias deleniti hic
-                            quos.
-                            Rem, dolore. Dicta fugit doloremque quis tempore, expedita ab.</p>
-                    </div>
-                    <div class="product-line-price"><span>$39.99</span>
-                        <button class="add-to-cart-button"
-                            onclick="addToCart('product-1', 'THE SUBTLE ART OF NOT GIVING A F*CK', 39.99, '/resources/0005000216.jpg')">Add
-                            to
-                            Cart</button>
-                    </div>
-                </div>
-
-                <div class="product" id="product-2">
-                    <div class="product-image">
-                        <img src="../resources/0005000217.jpg" width="340" height="470">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title">
-                            <h1>COMPANY OF ONE
-                            </h1>
-                            <h2>Paul Jarvis</h2>
+                        <div class="product-details">
+                            <div class="product-title">
+                                <h1>
+                                    <?php echo $book['title']; ?>
+                                </h1>
+                                <h2>
+                                    <?php echo $book['author']; ?>
+                                </h2>
+                            </div>
+                            <p class="product-description">
+                                <?php echo $book['description']; ?>
+                            </p>
                         </div>
-                        <p class="product-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Quaerat
-                            sit nihil id porro hic sequi. Voluptas, at. Perferendis nemo expedita voluptatibus
-                            eaque,
-                            sint id, accusantium, saepe earum eius sequi rem.</p>
-                    </div>
-                    <div class="product-line-price"><span>$9.99</span>
-                        <button class="add-to-cart-button"
-                            onclick="addToCart('product-2', 'COMPANY OF ONE', 19.99, '/resources/0005000217.jpg')">Add
-                            to
-                            Cart</button>
-                    </div>
-                </div>
-                <div class="product" id="product-3">
-                    <div class="product-image">
-                        <img src="../resources/0005000218.jpg" width="340" height="470">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title">
-                            <h1>MILK AND HONEY
-                            </h1>
-                            <h2>Rupi Kaur</h2>
+                        <div class="product-line-price"><span>$
+                                <?php echo $book['price']; ?>
+                            </span>
+                            <button class="add-to-cart-button"
+                                onclick="addToCart('product-<?php echo $book['id']; ?>', '<?php echo $book['title']; ?>', <?php echo $book['price']; ?>, '<?php echo $book['cover_image']; ?>')">Add
+                                to Cart</button>
                         </div>
-                        <p class="product-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Quaerat
-                            sit nihil id porro hic sequi. Voluptas, at. Perferendis nemo expedita voluptatibus
-                            eaque,
-                            sint id, accusantium, saepe earum eius sequi rem.</p>
                     </div>
-                    <div class="product-line-price"><span>$12.99</span>
-                        <button class="add-to-cart-button"
-                            onclick="addToCart('product-3', 'MILK AND HONEY', 12.99, '/resources/0005000218.jpg' )">Add
-                            to
-                            Cart</button>
-                    </div>
-                </div>
-                <div class="product" id="product-4">
-                    <div class="product-image">
-                        <img src="../resources/0005000219.jpg" width="340" height="470">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title">
-                            <h1>THE CHRONICLES OF NARNIA
-                            </h1>
-                            <h2>C.S Lewis</h2>
-                        </div>
-                        <p class="product-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Quaerat
-                            sit nihil id porro hic sequi. Voluptas, at. Perferendis nemo expedita voluptatibus
-                            eaque,
-                            sint id, accusantium, saepe earum eius sequi rem.</p>
-                    </div>
-                    <div class="product-line-price"><span>$14.99</span>
-                        <button class="add-to-cart-button"
-                            onclick="addToCart('product-4','THE CHRONICLES OF NARNIA', 14.99, '/resources/0005000219.jpg' )">Add
-                            to
-                            Cart</button>
-                    </div>
-                </div>
-
-                <div class="product" id="product-5">
-                    <div class="product-image">
-                        <img src="../resources/0005000220.jpg" width="340" height="470">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title">
-                            <h1>THE TWO TOWERS
-                            </h1>
-                            <h2>J-R-R Tolkien</h2>
-                        </div>
-                        <p class="product-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Quaerat
-                            sit nihil id porro hic sequi. Voluptas, at. Perferendis nemo expedita voluptatibus
-                            eaque,
-                            sint id, accusantium, saepe earum eius sequi rem.</p>
-                    </div>
-                    <div class="product-line-price"><span>$19.99</span>
-                        <button class="add-to-cart-button"
-                            onclick="addToCart('product-5','THE TWO TOWERS', 19.99, '/resources/0005000220.jpg' )">Add
-                            to
-                            Cart</button>
-                    </div>
-                </div>
-
-                <div class="product" id="product-6">
-                    <div class="product-image">
-                        <img src="../resources/0005000215.jpg" width="340" height="470">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title">
-                            <h1> ELEGY FOR KOSOVO
-                            </h1>
-                            <h2>Ismail Kadare</h2>
-                        </div>
-                        <p class="product-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Quaerat
-                            sit nihil id porro hic sequi. Voluptas, at. Perferendis nemo expedita voluptatibus
-                            eaque,
-                            sint id, accusantium, saepe earum eius sequi rem.</p>
-                    </div>
-                    <div class="product-line-price"><span>$9.99</span>
-                        <button class="add-to-cart-button"
-                            onclick="addToCart('product-6', 'ELEGY FOR KOSOVO', 9.99, '/resources/0005000215.jpg' )">Add
-                            to
-                            Cart</button>
-                    </div>
-                </div>
-
-                <div class="product" id="product-7">
-                    <div class="product-image">
-                        <img src="../resources/0005000221.jpg" width="340" height="470">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title">
-                            <h1>MERE CHRISTIANITY
-                            </h1>
-                            <h2>C.S Lewis</h2>
-                        </div>
-                        <p class="product-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Quaerat
-                            sit nihil id porro hic sequi. Voluptas, at. Perferendis nemo expedita voluptatibus
-                            eaque,
-                            sint id, accusantium, saepe earum eius sequi rem.</p>
-                    </div>
-                    <div class="product-line-price"><span>$12.99</span>
-                        <button class="add-to-cart-button"
-                            onclick="addToCart('product-7','MERE CHRISTIANITY', 12.99, '/resources/0005000221.jpg' )">Add
-                            to
-                            Cart</button>
-                    </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
 
             <div class="newsletter">
