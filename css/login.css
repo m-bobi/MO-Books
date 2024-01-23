@@ -217,3 +217,37 @@
 label {
     padding: 4px;
 }
+
+.formGroup select {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    height: 30px;
+    border: solid 2px #1a61ff;
+    font-size: 20px;
+    color: black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    transition: all 250ms ease;
+}
+
+.sectionRight .error-msg {
+    margin: 20px 0;
+    padding: 20px;
+    display: block;
+    background-color: crimson;
+    color: #fefefe;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.leftText span{
+    font-weight: 700;
+    font-size: 2.5rem;
+    border-radius: 11px;
+    padding: 5px;
+    background-color: #fefefe;
+}
