@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/cart.css">
-    <link rel="stylesheet" href="/css/globals.css">
-    <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
     <title>Checkout | MO' BOOKS </title>
 </head>
 
@@ -21,16 +21,16 @@
                     </div>
                     <input type="text" class="search" placeholder="Search for ISBN, name, author">
                     <div class="icons">
-                        <a href="cart.html"><img loading="lazy" src="/resources/logos/shopping.png" class="img-3" /></a>
-                        <a href="login.html"><img loading="lazy" src="/resources/logos/user.png" class="img-4"
+                        <a href="cart.html"><img loading="lazy" src="../resources/logos/shopping.png" class="img-3" /></a>
+                        <a href="login.html"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
                                 id="userImage" /></a>
                     </div>
                 </div>
                 <hr class="div-8">
                 </hr>
                 <div class="navBar">
-                    <a href="/home.html">HOME</a>
-                    <a href="browse.html">BROWSE</a>
+                    <a href="../home.php">HOME</a>
+                    <a href="browse.php">BROWSE</a>
                     <a href="">NEW RELEASES</a>
                     <a href="contact.html">CONTACT</a>
                 </div>
@@ -61,7 +61,7 @@
 
             </div>
 
-            <script src="/js/cart.js"></script>
+            <script src="../js/cart.js"></script>
 
 </body>
 

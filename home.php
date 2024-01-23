@@ -23,9 +23,9 @@
                     </div>
                     <input type="text" class="search" placeholder="Search for ISBN, name, author">
                     <div class="icons">
-                        <a href="html/cart.html"><img loading="lazy" src="resources/logos/shopping.png"
+                        <a href="html/cart.php"><img loading="lazy" src="resources/logos/shopping.png"
                                 class="img-3" /></a>
-                        <a href="html/login.html"><img loading="lazy" src="resources/logos/user.png" class="img-4"
+                        <a href="html/login.php"><img loading="lazy" src="resources/logos/user.png" class="img-4"
                                 id="userImage" /></a>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
             </hr>
             <div class="sec">
                 <h1 class="new">New Releases This Week</h1>
-                <a href="html/browse.html">
+                <a href="html/browse.php">
                     <h3 class="view">View all(10)</h3>
                 </a>
             </div>
@@ -122,7 +122,7 @@
 
             <div class="sec">
                 <h1 class="new">Best Sellers</h1>
-                <a href="html/browse.html">
+                <a href="html/browse.php">
                     <h3 class="view">View all(10)</h3>
                 </a>
             </div>

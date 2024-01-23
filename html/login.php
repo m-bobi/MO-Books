@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/globals.css">
-    <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
 
 
     <title>Login | MO' BOOKS</title>
@@ -43,7 +43,7 @@
                             <input type="submit" class="btnLogin" value="Continue">
                         </div>
                         <div class="formGroup">
-                            <p class="createAccountLink">Don't have an Account? <a href="signup.html"
+                            <p class="createAccountLink">Don't have an Account? <a href="signup.php"
                                     rel="noopener noreferrer">Sign Up</a></p>
                         </div>
                     </form>
@@ -61,7 +61,7 @@
         </div>
     </div>
     </div>
-    <script src="/js/loginValidation.js" defer></script>
+    <script src="../js/loginValidation.js" defer></script>
 </body>
 
 </html>

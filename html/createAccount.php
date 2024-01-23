@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/createAccount.css">
-    <link rel="stylesheet" href="/css/globals.css">
-    <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/createAccount.css">
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
 
 
     <title>Create Account | MO' BOOKS</title>
@@ -21,7 +21,7 @@
                     <div class="leftText">
                         <h2>Welcome to the family!</h2>
                         <p>Already have an account?</p>
-                        <a href="login.html" rel="noopener noreferrer">
+                        <a href="login.php" rel="noopener noreferrer">
                             <input type="button" class="btnSignup" value="Sign in">
                         </a>
                     </div>
@@ -30,7 +30,7 @@
                 <div class="sectionRight">
                     <h1 class="profileTitle">Take this time to make your profile!</h1>
                     <div class="profilePicture">
-                        <img src="/resources/logos/panda.png" alt="" srcset="">
+                        <img src="../resources/logos/panda.png" alt="" srcset="">
                     </div>
                     <form action="" method="">
                         <h2 class="formTitle">What should we call you?</h2>
@@ -39,7 +39,7 @@
                                 placeholder="Enter name here" required>
                         </div>
                         <div class="formGroup">
-                            <a href="/home.html" target="_blank" rel="noopener noreferrer">
+                            <a href="../home.php" target="_blank" rel="noopener noreferrer">
                                 <input type="submit" class="btnContinue" value="Continue">
                             </a>
                         </div>
@@ -51,7 +51,7 @@
     </div>
     </div>
 
-    <script src="/js/createAccountValidation.js"></script>
+    <script src="../js/createAccountValidation.js"></script>
 </body>
 
 </html>

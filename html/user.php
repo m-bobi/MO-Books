@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/user.css">
-    <link rel="stylesheet" href="/css/globals.css">
-    <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
 
 
     <title>User | MO' BOOKS</title>
@@ -26,15 +26,15 @@
                     </div>
                     <input type="text" class="search" placeholder="Search for ISBN, name, author">
                     <div class="icons">
-                        <a href="cart.html"><img loading="lazy" src="/resources/logos/shopping.png" class="img-3" /></a>
-                        <a href="login.html"><img loading="lazy" src="/resources/logos/user.png" class="img-4"
+                        <a href="cart.php"><img loading="lazy" src="../resources/logos/shopping.png" class="img-3" /></a>
+                        <a href="login.php"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
                                 id="userImage" /></a>
                     </div>
                 </div>
                 <hr class="div-8">
                 </hr>
                 <div class="navBar">
-                    <a href="/home.html">HOME</a>
+                    <a href="../home.php">HOME</a>
                     <a href="#">BROWSE</a>
                     <a href="">NEW RELEASES</a>
                     <a href="contact.html">CONTACT</a>
@@ -46,7 +46,7 @@
                 <div class="sectionRight">
                     <!-- User Image and Name -->
                     <div class="userDetails">
-                        <img src="/resources/logos/panda.png" alt="User Image" class="userImage">
+                        <img src="../resources/logos/panda.png" alt="User Image" class="userImage">
                         <h2 id="userName"></h2>
                     </div>
 
@@ -78,7 +78,7 @@
         </div>
     </div>
 
-    <script src="/js/user.js" defer></script>
+    <script src="../js/user.js" defer></script>
 </body>
 
 </html>

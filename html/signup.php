@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/globals.css">
-    <link rel="shortcut icon" href="/resources/logos/books.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
 
 
     <title>Sign up to MO' Books</title>
@@ -24,7 +24,7 @@
                         <h2>Welcome Back!</h2>
                         <p>Already have an account?</p>
 
-                        <a href="login.html" rel="noopener noreferrer">
+                        <a href="login.php" rel="noopener noreferrer">
                             <input type="button" class="btnSignup" value="Sign in">
                         </a>
                     </div>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="formGroup">
                             <input type="submit" class="btnLogin" value="Continue">
-                            <p class="createAccountLink">Already have an account? <a href="login.html"
+                            <p class="createAccountLink">Already have an account? <a href="login.php"
                                     rel="noopener noreferrer">Sign in</a></p>
                         </div>
                     </form>
@@ -70,7 +70,7 @@
     </div>
 </body>
 
-<script src="/js/signupValidation.js" defer></script>
+<script src="../js/signupValidation.js" defer></script>
 </body>
 
 </html>
