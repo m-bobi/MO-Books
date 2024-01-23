@@ -26,22 +26,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ---------------------- USER VALIDATION
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
-    const accountCreated = localStorage.getItem('accountCreated');
+//     const accountCreated = localStorage.getItem('accountCreated');
 
-    if (accountCreated === 'true') {
+//     if (accountCreated === 'true') {
 
-        const userImage = document.getElementById('userImage');
-
-
-        userImage.src = '/resources/logos/panda.png';
+//         const userImage = document.getElementById('userImage');
 
 
-        userImage.style.backgroundColor = '#C05A34';
-        userImage.style.borderRadius = '60px';
-        userImage.style.height = '60px';
-        userImage.style.width = '60px';
+//         userImage.src = '/resources/logos/panda.png';
 
-    }
-});
+
+//         userImage.style.backgroundColor = '#C05A34';
+//         userImage.style.borderRadius = '60px';
+//         userImage.style.height = '60px';
+//         userImage.style.width = '60px';
+
+//     }
+// });

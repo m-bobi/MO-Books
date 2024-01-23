@@ -1,3 +1,39 @@
+<?php
+
+
+include '../core/database.php';
+session_start();
+
+if (isset($_POST['submit'])) {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = md5($_POST['password']);
+    $name = isset($_POST['name']) ? mysqli_real_escape_string($conn, $_POST['name']) : '';
+    $confirmPassword = isset($_POST['confirmPassword']) ? md5($_POST['confirmPassword']) : '';
+    $user_type = isset($_POST['user_type']) ? $_POST['user_type'] : '';
+
+
+
+    $select = " SELECT * from  user_form where email = '$email' && password = '$password' ";
+
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_array($result);
+
+        if ($row['user_type'] == 'admin') {
+            $_SESSION['admin_name'] = $row['name'];
+            header('location: ../dashboard/admin_page.php');
+        } else if ($row['user_type'] == 'user') {
+            $_SESSION['user_name'] = $row['name'];
+            header('location: ../home.php');
+        }
+
+    } else {
+        $error[] = 'Invalid Credentials!';
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +57,7 @@
                     <div class="leftText">
                         <h2>Welcome!</h2>
                         <p>Don't have an account?</p>
-                        <a href="signup.html" rel="noopener noreferrer">
+                        <a href="signup.php" rel="noopener noreferrer">
                             <input type="button" class="btnSignup" value="Sign up">
                         </a>
                     </div>
@@ -30,6 +66,13 @@
                 <div class="sectionRight">
                     <form action="" method="POST" id="loginForm">
                         <h1>Sign in</h1>
+                        <?php
+                        if (isset($error)) {
+                            foreach ($error as $error) {
+                                echo '<span class="error-msg">' . $error . '</span>';
+                            }
+                        }
+                        ?>
                         <div class="formGroup">
                             <label for="email">E-mail</label>
                             <input type="text" name="email" class="formInput" id="email" placeholder="E-mail" required>
@@ -40,7 +83,7 @@
                                 placeholder="Password" required minlength="8">
                         </div>
                         <div class="formGroup">
-                            <input type="submit" class="btnLogin" value="Continue">
+                            <input type="submit" name="submit" class="btnLogin" value="Continue">
                         </div>
                         <div class="formGroup">
                             <p class="createAccountLink">Don't have an Account? <a href="signup.php"
@@ -52,16 +95,8 @@
             </aside>
         </div>
     </div>
-    <div id="overlay" class="overlay"></div>
-
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2>You've successfully logged in!</h2>
-        </div>
     </div>
-    </div>
-    <script src="../js/loginValidation.js" defer></script>
+    <!-- <script src="../js/loginValidation.js" defer></script> -->
 </body>
 
 </html>
