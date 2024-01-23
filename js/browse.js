@@ -70,15 +70,15 @@ function addToCart(productId, productName, productPrice, productImage) {
 
 // ---------------------- USER VALIDATION
 
-document.addEventListener('DOMContentLoaded', function () {
-    const accountCreated = localStorage.getItem('accountCreated');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const accountCreated = localStorage.getItem('accountCreated');
 
-    if (accountCreated === 'true') {
-        const userImage = document.getElementById('userImage');
-        userImage.src = '/resources/logos/panda.png';
-        userImage.style.backgroundColor = '#C05A34';
-        userImage.style.borderRadius = '60px';
-        userImage.style.height = '60px';
-        userImage.style.width = '60px';
-    }
-});
+//     if (accountCreated === 'true') {
+//         const userImage = document.getElementById('userImage');
+//         userImage.src = '/resources/logos/panda.png';
+//         userImage.style.backgroundColor = '#C05A34';
+//         userImage.style.borderRadius = '60px';
+//         userImage.style.height = '60px';
+//         userImage.style.width = '60px';
+//     }
+// });
