@@ -202,3 +202,23 @@
         border-radius: 11px;
     }
 }
+
+
+/* Add this to your CSS stylesheet */
+.activity-logs {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-logs li {
+    margin-bottom: 8px;
+}
+
+.log-action {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.log-timestamp {
+    color: #888;
+}

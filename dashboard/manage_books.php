@@ -139,7 +139,6 @@ mysqli_close($conn);
 
                 </div>
             </aside>
-        </div>
         <div class="newBookSection">
             <form class="newBook" method="post" action="" enctype="multipart/form-data">
                 <h2>Add New Book</h2>
@@ -171,7 +170,7 @@ mysqli_close($conn);
             </form>
 
         </div>
-
+        </div>
 
     </div>
 </body>

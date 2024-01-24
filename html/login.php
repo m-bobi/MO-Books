@@ -6,32 +6,35 @@ session_start();
 
 if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = md5($_POST['password']);
-    $name = isset($_POST['name']) ? mysqli_real_escape_string($conn, $_POST['name']) : '';
-    $confirmPassword = isset($_POST['confirmPassword']) ? md5($_POST['confirmPassword']) : '';
-    $user_type = isset($_POST['user_type']) ? $_POST['user_type'] : '';
+    $enteredPassword = $_POST['password'];
 
-
-
-    $select = " SELECT * from  user_form where email = '$email' && password = '$password' ";
-
+    $select = "SELECT * FROM user_form WHERE email = '$email'";
     $result = mysqli_query($conn, $select);
 
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_array($result);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
 
-        if ($row['user_type'] == 'admin') {
-            $_SESSION['admin_name'] = $row['name'];
-            header('location: ../dashboard/admin_page.php');
-        } else if ($row['user_type'] == 'user') {
-            $_SESSION['user_name'] = $row['name'];
-            header('location: ../home.php');
+
+        if (password_verify($enteredPassword, $row['password'])) {
+
+            if ($row['user_type'] == 'admin') {
+                $_SESSION['admin_name'] = $row['name'];
+                header('location: ../dashboard/admin_page.php');
+                exit();
+            } else if ($row['user_type'] == 'user') {
+                $_SESSION['user_name'] = $row['name'];
+                header('location: ../main/home.php');
+                exit();
+            }
+        } else {
+
+            $error[] = 'Invalid Credentials!';
         }
-
     } else {
         $error[] = 'Invalid Credentials!';
     }
 }
+
 
 ?>
 <!DOCTYPE html>

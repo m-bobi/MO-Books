@@ -1,30 +1,38 @@
 <?php
+require 'insertLog.php';
 
-function updateBook($bookId, $newTitle, $newAuthor, $adminName)
+function updateBook($book_id, $new_title, $new_author, $adminName)
 {
     global $conn;
 
-    $updateQuery = "UPDATE books
-                    SET title = '$newTitle',
-                        author = '$newAuthor',
-                        last_modified_by = '$adminName',
-                        last_modified_at = NOW()
-                    WHERE id = $bookId";
+    // Sanitize the input
+    $book_id = mysqli_real_escape_string($conn, $book_id);
+    $new_title = mysqli_real_escape_string($conn, $new_title);
+    $new_author = mysqli_real_escape_string($conn, $new_author);
 
+    // Get book details before update
+    $bookDetailsQuery = "SELECT title, author FROM books WHERE id = '$book_id'";
+    $bookDetailsResult = mysqli_query($conn, $bookDetailsQuery);
+    $bookDetails = mysqli_fetch_assoc($bookDetailsResult);
+
+    // Update the book in the books table
+    $updateQuery = "UPDATE books SET title = '$new_title', author = '$new_author' WHERE id = '$book_id'";
     $updateResult = mysqli_query($conn, $updateQuery);
 
     if ($updateResult) {
-        $insertUpdateQuery = "INSERT INTO book_updates (book_id, updated_by)
-                              VALUES ($bookId, '$adminName')";
-        $insertUpdateResult = mysqli_query($conn, $insertUpdateQuery);
+        // Book updated successfully
+        $oldTitle = $bookDetails['title'];
+        $oldAuthor = $bookDetails['author'];
+        $action = "Updated book details: $oldTitle by $oldAuthor to $new_title by $new_author";
+        insertLog($adminName, $action);
 
-        if ($insertUpdateResult) {
-            return true;
-        } else {
-            return false;
-        }
+        header("Location: manage_books.php");
+        exit();
     } else {
-        return false;
+        // Failed to update the book
+        echo "Failed to update the book: " . mysqli_error($conn);
     }
+
+    mysqli_close($conn);
 }
 ?>

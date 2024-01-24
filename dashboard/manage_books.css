@@ -4,6 +4,7 @@
     flex-direction: column;
     padding: 0 8px;
     height: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add shadow effect */
 }
 
 .sectionWhite {
@@ -11,7 +12,6 @@
     display: flex;
     flex-direction: column;
     margin: 12px 0 48px;
-    padding-bottom: 500px;
 }
 
 @media (max-width: 991px) {
@@ -23,16 +23,52 @@
 
 .sections {
     display: flex;
-    height: 100vh;
+    height: 150vh;
+}
+
+@media (max-width: 991px) {
+    .sections {
+        height: calc(150vh + 50vh);
+    }
+}
+
+@media (max-width: 720px) {
+    .sections {
+        height: calc(150vh + 100vh);
+    }
+}
+
+@media (max-width: 620px) {
+    .sections {
+        height: calc(150vh + 150vh);
+    }
+}
+
+@media (max-width: 540px) {
+    .sections {
+        height: calc(150vh + 200vh);
+    }
+}
+
+@media (max-width: 440px) {
+    .sections {
+        height: calc(150vh + 250vh);
+    }
+}
+
+@media (max-width: 372px) {
+    .sections {
+        height: calc(150vh + 278vh);
+    }
 }
 
 .sectionLeft {
     display: flex;
-    align-items: center;
+    padding-top: 50px;
+    align-items: flex-start;
     justify-content: center;
     background-color: var(--extraColor);
     width: 30%;
-    height: 146.9%;
 }
 
 @media (max-width: 991px) {
@@ -59,10 +95,6 @@
     }
 }
 
-.createAccountLink {
-    display: none;
-}
-
 @media (max-width: 390px) {
     .sectionRight {
         width: 100%;
@@ -74,10 +106,6 @@
 }
 
 @media screen and (max-width: 991px) {
-    .createAccountLink {
-        display: block;
-    }
-
     .sectionLeft {
         display: none;
     }
@@ -110,13 +138,13 @@
     text-align: center;
 }
 
-.sectionRight {
+/* .sectionRight {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-}
+} */
 
 .sectionRight h1 {
     color: var(--main-color);
@@ -124,35 +152,6 @@
     font-size: 2.6rem;
 }
 
-.dashboardContent {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-}
-
-.dashboardContent h2 {
-    color: var(--main-color);
-    font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.dashboardContent p {
-    color: var(--main-color);
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 20px;
-}
 
 .leftText span {
     font-weight: 700;
@@ -206,17 +205,16 @@
 
 .bookList {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
-
 .book {
+    width: 250px;
+    padding: 18px;
+    margin: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    padding: 20px;
 }
 
 .bookList h2 {
@@ -290,7 +288,8 @@
 
 form input {
     background-color: var(--extraColor);
-    padding: 10px;
+    padding: 8px;
+    margin: 5px;
     border-radius: 8px;
     border-style: none;
     box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);

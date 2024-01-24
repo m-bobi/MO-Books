@@ -1,17 +1,15 @@
 <?php
-
+session_start();
 include '../core/database.php';
 
 if (isset($_POST['submit'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = md5($_POST['password']);
-    $confirmPassword = md5($_POST['confirmPassword']);
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
     $user_type = $_POST['user_type'];
 
-
-    $select = " SELECT * from  user_form where email = '$email' && password = '$password' ";
-
+    $select = "SELECT * FROM user_form WHERE email = '$email'";
     $result = mysqli_query($conn, $select);
 
     if (mysqli_num_rows($result) > 0) {
@@ -19,14 +17,15 @@ if (isset($_POST['submit'])) {
     } else {
         if ($password != $confirmPassword) {
             $error[] = "Passwords do not match!";
-        } else{
-            $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES ('$name', '$email', '$password', '$user_type')";
+        } else {
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES ('$name', '$email', '$hashedPassword', '$user_type')";
             mysqli_query($conn, $insert);
             header('Location: login.php');
+            exit();
         }
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
