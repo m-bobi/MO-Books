@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     margin: 12px 0 48px;
-    height: 97vh;
+    padding-bottom: 500px;
 }
 
 @media (max-width: 991px) {
@@ -32,7 +32,7 @@
     justify-content: center;
     background-color: var(--extraColor);
     width: 30%;
-    height: 100%;
+    height: 146.9%;
 }
 
 @media (max-width: 991px) {
@@ -162,7 +162,7 @@
     background-color: #fefefe;
 }
 
-.leftText .btnDashboard {
+.btnDashboard {
     background-color: var(--main-color);
     font-weight: 600;
     color: var(--section-color);
@@ -177,4 +177,123 @@
 .btnDashboard:hover {
     cursor: pointer;
     background-color: #c05934cf;
+}
+
+
+.navbar {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        display: block;
+    }
+
+    .navbar h2,
+    p {
+        text-align: center;
+        color: var(--main-color);
+    }
+
+    .navbar span {
+        font-size: 1.5rem;
+        background-color: var(--extraColor);
+        padding: 8px;
+        border-radius: 11px;
+    }
+}
+
+
+.bookList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.book {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.bookList h2 {
+    color: var(--main-color);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+
+.btnUpdate {
+    background-color: var(--main-color);
+    font-weight: 600;
+    color: var(--section-color);
+    border-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+}
+
+.btnUpdate:hover {
+    cursor: pointer;
+    background-color: #c05934cf;
+}
+
+.btnDelete {
+    background-color: var(--main-color);
+    font-weight: 600;
+    color: var(--section-color);
+    border-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+}
+
+.btnDelete:hover {
+    cursor: pointer;
+    background-color: #c05934cf;
+}
+
+.newBookSection {
+    background-color: var(--section-color);
+    padding-bottom: 200px;
+}
+
+.newBook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.newBook h2 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.newBook label {
+    color: var(--main-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+form input {
+    background-color: var(--extraColor);
+    padding: 10px;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
 }

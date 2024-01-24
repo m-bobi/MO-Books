@@ -13,6 +13,13 @@ if (!isset($_SESSION['admin_name'])) {
 $query = "SELECT * FROM user_form";
 $result = mysqli_query($conn, $query);
 
+$queryBooks = "SELECT COUNT(*) AS totalBooks FROM books";
+$resultBooks = mysqli_query($conn, $queryBooks);
+$totalBooks = mysqli_fetch_assoc($resultBooks)['totalBooks'];
+
+$queryLastModification = "SELECT last_modified_by, last_modified_at FROM books ORDER BY last_modified_at DESC LIMIT 1";
+$resultLastModification = mysqli_query($conn, $queryLastModification);
+$lastModification = mysqli_fetch_assoc($resultLastModification);
 
 if (!$result) {
     die("Query failed: " . mysqli_error($conn));
@@ -31,7 +38,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/globals.css">
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
 
     <title>Admin Dashboard | MO' BOOKS</title>
@@ -41,6 +48,32 @@ mysqli_close($conn);
 <body>
     <div class="container">
         <div class="sectionWhite">
+
+            <div class="navbar">
+                <h2>Welcome <span>
+                        <?php echo $_SESSION['admin_name'] ?>
+                    </span></h2>
+                <p>Manage your books and users.</p>
+                <div class="formGroup">
+                    <a href="manage-books.php" rel="noopener noreferrer"> <input type="submit" name="submit"
+                            class="btnDashboard" value="Manage Books"></a>
+                </div>
+                <div class="formGroup">
+                    <a href="manage-users.php" rel="noopener noreferrer"><input type="submit" name="submit"
+                            class="btnDashboard" value="Manage Users"></a>
+                </div>
+                <div class="formGroup">
+                    <a href="../main/home.php" rel="noopener noreferrer"><input type="submit" name="submit"
+                            class="btnDashboard" value="Home"></a>
+                </div>
+                <div class="formGroup">
+                    <a href="../core/logout.php" rel="noopener noreferrer"
+                        onclick="return confirm('Are you sure you want to logout?')">
+                        <input type="submit" name="submit" class="btnDashboard" value="Logout">
+                    </a>
+                </div>
+            </div>
+
             <aside class="sections">
                 <div class="sectionLeft">
                     <div class="leftText">
@@ -49,7 +82,7 @@ mysqli_close($conn);
                             </span></h2>
                         <p>Manage your books and users.</p>
                         <div class="formGroup">
-                            <a href="manage-books.php" rel="noopener noreferrer"> <input type="submit" name="submit"
+                            <a href="manage_books.php" rel="noopener noreferrer"> <input type="submit" name="submit"
                                     class="btnDashboard" value="Manage Books"></a>
                         </div>
                         <div class="formGroup">
@@ -57,7 +90,7 @@ mysqli_close($conn);
                                     class="btnDashboard" value="Manage Users"></a>
                         </div>
                         <div class="formGroup">
-                            <a href="../home.php" rel="noopener noreferrer"><input type="submit" name="submit"
+                            <a href="../main/home.php" rel="noopener noreferrer"><input type="submit" name="submit"
                                     class="btnDashboard" value="Home"></a>
                         </div>
                         <div class="formGroup">
@@ -78,6 +111,16 @@ mysqli_close($conn);
                         <p>Total Users:
                             <?php echo count($users); ?>
                         </p>
+                        <p>Total Books:
+                            <?php echo $totalBooks; ?>
+                        </p>
+
+                        <h2>Last Book Modification</h2>
+                        <p>Last Modified By: <?php echo $lastModification['last_modified_by']; ?>
+                        </p>
+                        <p>Last Modified At:
+                            <?php echo $lastModification['last_modified_at']; ?>
+                        </p>
                     </div>
                 </div>
 
@@ -87,5 +130,4 @@ mysqli_close($conn);
     </div>
 
 </body>
-
 </html>
