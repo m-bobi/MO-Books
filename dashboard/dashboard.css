@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     margin: 12px 0 48px;
-    height: 97vh;
+    height: 100vh;
 }
 
 @media (max-width: 991px) {
@@ -162,7 +162,7 @@
     background-color: #fefefe;
 }
 
-.leftText .btnDashboard {
+.btnDashboard {
     background-color: var(--main-color);
     font-weight: 600;
     color: var(--section-color);
@@ -177,4 +177,48 @@
 .btnDashboard:hover {
     cursor: pointer;
     background-color: #c05934cf;
+}
+
+
+.navbar {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        display: block;
+    }
+
+    .navbar h2,
+    p {
+        text-align: center;
+        color: var(--main-color);
+    }
+
+    .navbar span {
+        font-size: 1.5rem;
+        background-color: var(--extraColor);
+        padding: 8px;
+        border-radius: 11px;
+    }
+}
+
+
+/* Add this to your CSS stylesheet */
+.activity-logs {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-logs li {
+    margin-bottom: 8px;
+}
+
+.log-action {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.log-timestamp {
+    color: #888;
 }

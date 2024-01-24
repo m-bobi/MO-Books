@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navBar.classList.toggle('active');
     });
 
-    const navLinks = document.querySelectorAll('.navBar a');
+    const navLinks = document.querySelectorAll('.formGroup a');
     navLinks.forEach(link => {
         link.addEventListener('click', function () {
             navBar.classList.remove('active');
@@ -22,26 +22,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-// ---------------------- USER VALIDATION
-
-// document.addEventListener('DOMContentLoaded', function () {
-
-//     const accountCreated = localStorage.getItem('accountCreated');
-
-//     if (accountCreated === 'true') {
-
-//         const userImage = document.getElementById('userImage');
-
-
-//         userImage.src = '/resources/logos/panda.png';
-
-
-//         userImage.style.backgroundColor = '#C05A34';
-//         userImage.style.borderRadius = '60px';
-//         userImage.style.height = '60px';
-//         userImage.style.width = '60px';
-
-//     }
-// });
