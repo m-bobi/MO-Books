@@ -1,5 +1,4 @@
 <?php
-// require 'insertLog.php';
 
 function addBook($title, $author, $description, $price, $genre, $publicationYear, $isbn, $coverImage, $adminName)
 {
@@ -15,14 +14,14 @@ function addBook($title, $author, $description, $price, $genre, $publicationYear
     $insertResult = mysqli_query($conn, $insertQuery);
 
     if ($insertResult) {
-        // Book added successfully
+
         $book_id = mysqli_insert_id($conn);
         $action = "Added book: $title by $author";
         insertLog($adminName, $action, $book_id);
 
         return true;
     } else {
-        // Failed to add the book
+
         echo "Failed to add the book: " . mysqli_error($conn);
         return false;
     }

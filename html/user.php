@@ -1,3 +1,25 @@
+<?php
+session_start();
+require '../core/database.php';
+
+function getUserRedirectUrl()
+{
+    if (!isset($_SESSION['admin_name']) && !isset($_SESSION['user_name'])) {
+        return '../html/login.php';
+    }
+
+    if (isset($_SESSION['admin_name'])) {
+        return '../dashboard/admin_page.php';
+    } else {
+        return '../html/user.php';
+    }
+}
+
+$userName = $_SESSION['user_name'];
+
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +38,6 @@
 <body>
     <div class="container">
         <div class="sectionWhite">
-
-
             <header>
                 <div class="searchBar">
                     <div class="logo-toggle">
@@ -26,17 +46,20 @@
                     </div>
                     <input type="text" class="search" placeholder="Search for ISBN, name, author">
                     <div class="icons">
-                        <a href="cart.php"><img loading="lazy" src="../resources/logos/shopping.png" class="img-3" /></a>
-                        <a href="login.php"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
-                                id="userImage" /></a>
+                          <a href="<?php echo getUserRedirectUrl(); ?>">
+                            <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
+                        </a>
+                        <a href="<?php echo getUserRedirectUrl(); ?>">
+                            <img loading="lazy" src="../resources/logos/user.png" class="img-4" id="userImage" />
+                        </a>
                     </div>
                 </div>
                 <hr class="div-8">
                 </hr>
                 <div class="navBar">
-                    <a href="../home.php">HOME</a>
-                    <a href="#">BROWSE</a>
-                    <a href="">NEW RELEASES</a>
+                    <a href="../main/home.php">HOME</a>
+                    <a href="browse.php">BROWSE</a>
+                    <a href="browse.php">NEW RELEASES</a>
                     <a href="contact.html">CONTACT</a>
                 </div>
             </header>
@@ -44,41 +67,14 @@
 
             <aside class="sections">
                 <div class="sectionRight">
-                    <!-- User Image and Name -->
                     <div class="userDetails">
                         <img src="../resources/logos/panda.png" alt="User Image" class="userImage">
-                        <h2 id="userName"></h2>
                     </div>
-
-                    <!-- Additional Information Form -->
-                    <form id="userInfoForm">
-                        <h2>Add Additional Information</h2>
-
-                        <!-- Address Input -->
-                        <div class="formGroup">
-                            <input type="text" id="address" name="address" placeholder="Enter your address">
-                        </div>
-
-                        <!-- Work Place Input -->
-                        <div class="formGroup">
-                            <input type="text" id="workPlace" name="workPlace" placeholder="Enter your work place">
-                        </div>
-
-
-                        <!-- Birthdate Input -->
-                        <div class="formGroup">
-                            <input type="date" id="birthdate" name="birthdate">
-                        </div>
-
-                        <!-- Button to Save Changes -->
-                        <button type="submit">Save Changes</button>
-                    </form>
+                    <h2 class="username"><?php echo $userName; ?></h2>
                 </div>
             </aside>
         </div>
     </div>
-
-    <script src="../js/user.js" defer></script>
 </body>
 
 </html>

@@ -23,12 +23,9 @@ class Database
     }
 }
 
-// Instantiate the Database class
 $database = new Database();
 
-// Ensure that the database connection is established
 $database->tryConnection();
 
-// Get the connection object for procedural usage
 $conn = $database->getConnection();
 ?>
