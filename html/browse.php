@@ -4,9 +4,17 @@ session_start();
 
 require '../core/database.php';
 
-if (!isset($_SESSION['admin_name'])) {
-    header('location:../html/login.php');
-    exit();
+function getUserRedirectUrl()
+{
+    if (!isset($_SESSION['admin_name']) && !isset($_SESSION['user_name'])) {
+        return '../html/login.php';
+    }
+
+    if (isset($_SESSION['admin_name'])) {
+        return '../dashboard/admin_page.php';
+    } else {
+        return '../html/user.php';
+    }
 }
 
 // Fetch books from the database
@@ -51,16 +59,18 @@ mysqli_close($conn);
                         </div>
                         <input type="text" class="search" placeholder="Search for ISBN, name, author">
                         <div class="icons">
-                            <a href="cart.php"><img loading="lazy" src="../resources/logos/shopping.png"
-                                    class="img-3" /></a>
-                            <a href="login.php"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
-                                    id="userImage" /></a>
+                        <a href="<?php echo getUserRedirectUrl(); ?>">
+                            <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
+                        </a>
+                        <a href="<?php echo getUserRedirectUrl(); ?>">
+                            <img loading="lazy" src="../resources/logos/user.png" class="img-4" id="userImage" />
+                        </a>
                         </div>
                     </div>
                     <hr class="div-8">
                     </hr>
                     <div class="navBar">
-                        <a href="../home.php">HOME</a>
+                        <a href="../main/home.php">HOME</a>
                         <a href="#">BROWSE</a>
                         <a href="">NEW RELEASES</a>
                         <a href="contact.html">CONTACT</a>

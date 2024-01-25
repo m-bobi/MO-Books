@@ -5,9 +5,9 @@ include '../core/database.php';
 if (isset($_POST['submit'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $confirmPassword = $_POST['confirmPassword'];
-    $user_type = $_POST['user_type'];
+
 
     $select = "SELECT * FROM user_form WHERE email = '$email'";
     $result = mysqli_query($conn, $select);
@@ -15,11 +15,11 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($result) > 0) {
         $error[] = "Hey! You already have an account!";
     } else {
-        if ($password != $confirmPassword) {
+        if (!password_verify($confirmPassword, $password)) {
             $error[] = "Passwords do not match!";
         } else {
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-            $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES ('$name', '$email', '$hashedPassword', '$user_type')";
+            $user_type = 'user';
+            $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES ('$name', '$email', '$password', '$user_type')";
             mysqli_query($conn, $insert);
             header('Location: login.php');
             exit();
@@ -27,6 +27,7 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,16 +89,6 @@ if (isset($_POST['submit'])) {
                             <input type="password" name="confirmPassword" class="formInput" id="confirmPassword"
                                 placeholder="Confirm Password" required minlength="8">
                         </div>
-
-                        <div class="formGroup">
-                            <label for="role">Role</label>
-                            <select name="user_type">
-                                <option value="user">user</option>
-                                <option value="admin">admin</option>
-                            </select>
-                        </div>
-
-
 
                         <div class="formGroup">
                             <input type="submit" name="submit" class="btnLogin" value="Continue">

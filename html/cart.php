@@ -1,3 +1,16 @@
+function getUserRedirectUrl()
+{
+if (!isset($_SESSION['admin_name']) && !isset($_SESSION['user_name'])) {
+return '../html/login.php';
+}
+
+if (isset($_SESSION['admin_name'])) {
+return '../dashboard/admin_page.php';
+} else {
+return '../html/user.php';
+}
+}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +34,12 @@
                     </div>
                     <input type="text" class="search" placeholder="Search for ISBN, name, author">
                     <div class="icons">
-                        <a href="cart.html"><img loading="lazy" src="../resources/logos/shopping.png" class="img-3" /></a>
-                        <a href="login.html"><img loading="lazy" src="../resources/logos/user.png" class="img-4"
-                                id="userImage" /></a>
+                        <a href="<?php echo getUserRedirectUrl(); ?>">
+                            <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
+                        </a>
+                        <a href="<?php echo getUserRedirectUrl(); ?>">
+                            <img loading="lazy" src="../resources/logos/user.png" class="img-4" id="userImage" />
+                        </a>
                     </div>
                 </div>
                 <hr class="div-8">

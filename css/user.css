@@ -47,3 +47,9 @@
 .formGroup {
     padding: 20px;
 }
+
+.userDetails h2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
