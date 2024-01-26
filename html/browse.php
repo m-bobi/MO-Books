@@ -17,7 +17,6 @@ function getUserRedirectUrl()
     }
 }
 
-// Fetch books from the database
 $query = "SELECT * FROM books";
 $result = mysqli_query($conn, $query);
 
@@ -45,6 +44,49 @@ mysqli_close($conn);
 
     <script src="../js/cart.js"></script>
 
+    <script>
+        function getSuggestions(input) {
+            let url = 'getSuggestions.php?query=' + input;
+            console.log(url);
+
+            if (input.trim() === '') {
+                document.getElementById('suggestionsContainer').innerHTML = '';
+                return;
+            }
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    let suggestionsContainer = document.getElementById('suggestionsContainer');
+                    suggestionsContainer.innerHTML = '';
+                    data.forEach(suggestion => {
+
+                        let suggestionLink = document.createElement('a');
+                        suggestionLink.textContent = suggestion.title;
+                        if (suggestion.id !== undefined) {
+                            suggestionLink.href = '#product-' + suggestion.id;
+                        } else {
+                            // Handle the case where suggestion.id is undefined
+                            console.error('suggestion.id is undefined');
+                        }
+
+
+                        suggestionLink.addEventListener('click', function () {
+                            let productElement = document.getElementById('product-' + suggestion.id);
+                            if (productElement) {
+                                productElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        });
+                        let suggestionDiv = document.createElement('div');
+                        suggestionDiv.className = 'suggestion';
+                        suggestionDiv.appendChild(suggestionLink);
+                        suggestionsContainer.appendChild(suggestionDiv);
+                    });
+                })
+                .catch(error => console.error('Error fetching suggestions:', error));
+        }
+    </script>
+
 </head>
 
 <body>
@@ -52,19 +94,26 @@ mysqli_close($conn);
         <div class="container">
             <div class="sectionWhite">
                 <header>
+
                     <div class="searchBar">
                         <div class="logo-toggle">
                             <h1 class="logo">MO'</h1>
                             <div class="menu-toggle" id="menuToggle">&#9776;</div>
                         </div>
-                        <input type="text" class="search" placeholder="Search for ISBN, name, author">
+
+                        <form action="search.php" method="GET" class="searchForm">
+                            <input type="text" class="search" id="searchInput" name="query"
+                                placeholder="Search for ISBN, name, author" onkeyup="getSuggestions(this.value)">
+                            <div id="suggestionsContainer"></div>
+                        </form>
+
                         <div class="icons">
-                        <a href="<?php echo getUserRedirectUrl(); ?>">
-                            <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
-                        </a>
-                        <a href="<?php echo getUserRedirectUrl(); ?>">
-                            <img loading="lazy" src="../resources/logos/user.png" class="img-4" id="userImage" />
-                        </a>
+                            <a href="<?php echo getUserRedirectUrl(); ?>">
+                                <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
+                            </a>
+                            <a href="<?php echo getUserRedirectUrl(); ?>">
+                                <img loading="lazy" src="../resources/logos/user.png" class="img-4" id="userImage" />
+                            </a>
                         </div>
                     </div>
                     <hr class="div-8">

@@ -64,8 +64,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 /* --------------------  NAVBAR */
 
 .search {
@@ -76,6 +74,20 @@ html {
     width: 100%;
 }
 
+.searchForm{
+    width: 50%;
+}
+
+.suggestion{
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: var(--extraColor);
+    color: rgb(26, 23, 23);
+    border: 1px solid rgb(26, 23, 23);
+    border-radius: 4px;
+    height: 40px;
+    padding: 1.2%;
+}
 
 .menu-toggle {
     order: 2;
@@ -117,9 +129,6 @@ html {
 
 
 @media screen and (min-width: 992px) {
-    .search {
-        max-width: 50%;
-    }
 
     .searchBar {
         margin-left: 0;
