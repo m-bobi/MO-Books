@@ -1,0 +1,253 @@
+.container {
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    height: 0;
+}
+
+.sectionWhite {
+    background-color: var(--section-color);
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0 48px;
+    height: 97vh;
+}
+
+@media (max-width: 991px) {
+    .sectionWhite {
+        max-width: 100%;
+        padding-bottom: 100px;
+    }
+}
+
+.sections {
+    display: flex;
+    height: 100vh;
+}
+
+.sectionLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--extraColor);
+    width: 30%;
+    height: 100%;
+}
+
+@media (max-width: 991px) {
+    .sectionLeft .leftText h2 {
+        font-size: 1.8rem;
+        flex-wrap: wrap;
+    }
+
+    .sectionLeft {
+        width: 100%;
+        height: 112.7%;
+    }
+}
+
+@media (max-width: 650px) {
+    .sectionLeft .leftText h2 {
+        font-size: 1.8rem;
+        flex-wrap: wrap;
+    }
+
+    .sectionLeft {
+        width: 100%;
+        height: 112.7%;
+    }
+}
+
+.createAccountLink {
+    display: none;
+}
+
+@media (max-width: 390px) {
+    .sectionRight {
+        width: 100%;
+    }
+
+    .formGroup {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .createAccountLink {
+        display: block;
+    }
+
+    .sectionLeft {
+        display: none;
+    }
+}
+
+.leftText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.leftText h2 {
+    color: var(--main-color);
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+.leftText p {
+    color: var(--main-color);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.btnSignup {
+    background-color: var(--main-color);
+    font-weight: 600;
+    color: var(--section-color);
+    border-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+}
+
+
+.sectionRight {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sectionRight h1 {
+    color: var(--main-color);
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+.btnLogin {
+    background-color: var(--main-color);
+    font-weight: 600;
+    color: var(--section-color);
+    border-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+}
+
+
+.formGroup {
+    color: var(--main-color);
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInput {
+    background-color: var(--extraColor);
+    border-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.21);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.popup-content {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2.8rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btnLogin:hover {
+    cursor: pointer;
+    background-color: #c05934cf;
+}
+
+.btnSignup:hover {
+    cursor: pointer;
+    background-color: #c05934cf;
+}
+
+label {
+    padding: 4px;
+}
+
+.formGroup select {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    height: 30px;
+    border: solid 2px #1a61ff;
+    font-size: 20px;
+    color: black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    transition: all 250ms ease;
+}
+
+.sectionRight .error-msg {
+    margin: 20px 0;
+    padding: 20px;
+    display: block;
+    background-color: crimson;
+    color: #fefefe;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.leftText span {
+    font-weight: 700;
+    font-size: 2.5rem;
+    border-radius: 11px;
+    padding: 5px;
+    background-color: #fefefe;
+}
