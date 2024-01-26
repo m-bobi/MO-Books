@@ -118,7 +118,7 @@ mysqli_close($conn);
                             <div class="bio">
                                 <p class="bookTitle">
                                     <?php
-                                    if ($book['title'] === 'THE SUBTLE ART OF NOT GIVING A F*CK') {
+                                    if ($book['title'] === 'THE SUBTLE ART OF NOT GIVING A F*CK!' || $book['title'] === 'The Chronicles of Narnia') {
                                         echo shortenTitle($book['title']);
                                     } else {
                                         echo $book['title'];
@@ -156,7 +156,7 @@ mysqli_close($conn);
                             <div class="bio">
                                 <p class="bookTitle">
                                     <?php
-                                    if ($book['title'] === 'THE SUBTLE ART OF NOT GIVING A F*CK') {
+                                    if ($book['title'] === 'THE SUBTLE ART OF NOT GIVING A F*CK' || $book['title'] === 'The Chronicles of Narnia') {
                                         echo shortenTitle($book['title']);
                                     } else {
                                         echo $book['title'];

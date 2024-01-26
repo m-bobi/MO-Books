@@ -17,16 +17,6 @@ function getUserRedirectUrl()
     }
 }
 
-// Fetch books from the database
-$query = "SELECT * FROM books";
-$result = mysqli_query($conn, $query);
-
-if (!$result) {
-    die("Query failed: " . mysqli_error($conn));
-}
-
-$books = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 mysqli_close($conn);
 ?>
 
@@ -36,7 +26,7 @@ mysqli_close($conn);
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Browse | MO' BOOKS</title>
+    <title>Contact | MO' BOOKS</title>
     <link rel="stylesheet" href="../css/browse.css" />
     <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/globals.css" />
@@ -71,9 +61,9 @@ mysqli_close($conn);
                     </hr>
                     <div class="navBar">
                         <a href="../main/home.php">HOME</a>
-                        <a href="#">BROWSE</a>
-                        <a href="">NEW RELEASES</a>
-                        <a href="contact.html">CONTACT</a>
+                        <a href="browse.php">BROWSE</a>
+                        <a href="browse.php">NEW RELEASES</a>
+                        <a href="#">CONTACT</a>
                     </div>
                 </header>
                 <hr class="div-8">
