@@ -61,7 +61,11 @@ mysqli_close($conn);
                         <h1 class="logo">MO'</h1>
                         <div class="menu-toggle" id="menuToggle">&#9776;</div>
                     </div>
-                    <input type="text" class="search" placeholder="Search for ISBN, name, author">
+                    <form action="../html/search.php" method="GET" class="searchForm">
+                        <input type="text" class="search" id="searchInput" name="query"
+                            placeholder="Search for ISBN, name, author" onkeyup="getSuggestions(this.value)">
+                        <div id="suggestionsContainer"></div>
+                    </form>
                     <div class="icons">
                         <a href="<?php echo getUserRedirectUrl(); ?>">
                             <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
@@ -79,7 +83,7 @@ mysqli_close($conn);
                     <a href="home.php">HOME</a>
                     <a href="../html/browse.php">BROWSE</a>
                     <a href="#newReleases">NEW RELEASES</a>
-                    <a href="contact.html">CONTACT</a>
+                    <a href="../html/contact.php">CONTACT</a>
                 </div>
             </header>
             <br>
@@ -264,6 +268,7 @@ mysqli_close($conn);
     </footer>
     <script src="../js/script.js"></script>
     <script src="../js/slider.js"></script>
+    <script src="../js/search.js"></script>
 </body>
 
 </html>

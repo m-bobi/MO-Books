@@ -32,9 +32,7 @@ mysqli_close($conn);
     <link rel="stylesheet" href="../css/globals.css" />
 
     <script src="https://kit.fontawesome.com/538a0bacad.js" crossorigin="anonymous"></script>
-
-    <script src="../js/cart.js"></script>
-
+    <script src="../js/search.js"></script>
 </head>
 
 <body>
@@ -47,14 +45,18 @@ mysqli_close($conn);
                             <h1 class="logo">MO'</h1>
                             <div class="menu-toggle" id="menuToggle">&#9776;</div>
                         </div>
-                        <input type="text" class="search" placeholder="Search for ISBN, name, author">
+                        <form action="search.php" method="GET" class="searchForm">
+                            <input type="text" class="search" id="searchInput" name="query"
+                                placeholder="Search for ISBN, name, author" onkeyup="getSuggestions(this.value)">
+                            <div id="suggestionsContainer"></div>
+                        </form>
                         <div class="icons">
-                        <a href="<?php echo getUserRedirectUrl(); ?>">
-                            <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
-                        </a>
-                        <a href="<?php echo getUserRedirectUrl(); ?>">
-                            <img loading="lazy" src="../resources/logos/user.png" class="img-4" id="userImage" />
-                        </a>
+                            <a href="<?php echo getUserRedirectUrl(); ?>">
+                                <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
+                            </a>
+                            <a href="<?php echo getUserRedirectUrl(); ?>">
+                                <img loading="lazy" src="../resources/logos/user.png" class="img-4" id="userImage" />
+                            </a>
                         </div>
                     </div>
                     <hr class="div-8">
@@ -69,30 +71,30 @@ mysqli_close($conn);
                 <hr class="div-8">
                 </hr>
                 <form action="" method="POST" id="loginForm">
-                        <h1>Have something in mind?</h1>
-                        <?php
-                        if (isset($error)) {
-                            foreach ($error as $error) {
-                                echo '<span class="error-msg">' . $error . '</span>';
-                            }
+                    <h1>Have something in mind?</h1>
+                    <?php
+                    if (isset($error)) {
+                        foreach ($error as $error) {
+                            echo '<span class="error-msg">' . $error . '</span>';
                         }
-                        ?>
-                        <div class="formGroup">
-                            <label for="email">E-mail</label>
-                            <input type="text" name="email" class="formInput" id="email" placeholder="E-mail" required>
-                        </div>
-                        <div class="formGroup">
-                            <label for="email">Subject</label>
-                            <input type="text" name="subject" class="formInput" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="formGroup">
-                            <label for="email">Message</label>
-                            <input type="text" name="message" class="formInput" id="message" placeholder="Message" required>
-                        </div>
-                        <div class="formGroup">
-                            <input type="submit" name="submit" class="btnLogin" value="Continue">
-                        </div>
-                    </form>
+                    }
+                    ?>
+                    <div class="formGroup">
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" class="formInput" id="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="formGroup">
+                        <label for="email">Subject</label>
+                        <input type="text" name="subject" class="formInput" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="formGroup">
+                        <label for="email">Message</label>
+                        <input type="text" name="message" class="formInput" id="message" placeholder="Message" required>
+                    </div>
+                    <div class="formGroup">
+                        <input type="submit" name="submit" class="btnLogin" value="Continue">
+                    </div>
+                </form>
             </div>
 
             <div class="newsletter">

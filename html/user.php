@@ -33,6 +33,8 @@ mysqli_close($conn);
 
     <title>User | MO' BOOKS</title>
 
+    <script src="../js/search.js"></script>
+
 </head>
 
 <body>
@@ -44,9 +46,13 @@ mysqli_close($conn);
                         <h1 class="logo">MO'</h1>
                         <div class="menu-toggle" id="menuToggle">&#9776;</div>
                     </div>
-                    <input type="text" class="search" placeholder="Search for ISBN, name, author">
+                    <form action="search.php" method="GET" class="searchForm">
+                        <input type="text" class="search" id="searchInput" name="query"
+                            placeholder="Search for ISBN, name, author" onkeyup="getSuggestions(this.value)">
+                        <div id="suggestionsContainer"></div>
+                    </form>
                     <div class="icons">
-                          <a href="<?php echo getUserRedirectUrl(); ?>">
+                        <a href="<?php echo getUserRedirectUrl(); ?>">
                             <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
                         </a>
                         <a href="<?php echo getUserRedirectUrl(); ?>">
@@ -70,7 +76,9 @@ mysqli_close($conn);
                     <div class="userDetails">
                         <img src="../resources/logos/panda.png" alt="User Image" class="userImage">
                     </div>
-                    <h2 class="username"><?php echo $userName; ?></h2>
+                    <h2 class="username">
+                        <?php echo $userName; ?>
+                    </h2>
                 </div>
             </aside>
         </div>
