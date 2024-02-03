@@ -52,7 +52,7 @@ mysqli_close($conn);
                         <div id="suggestionsContainer"></div>
                     </form>
                     <div class="icons">
-                        <a href="<?php echo getUserRedirectUrl(); ?>">
+                        <a href="../html/cart.php">
                             <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
                         </a>
                         <a href="<?php echo getUserRedirectUrl(); ?>">
