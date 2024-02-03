@@ -1,15 +1,25 @@
+<?php
+
+session_start();
+
+require '../core/database.php';
+
 function getUserRedirectUrl()
 {
-if (!isset($_SESSION['admin_name']) && !isset($_SESSION['user_name'])) {
-return '../html/login.php';
+    if (!isset($_SESSION['admin_name']) && !isset($_SESSION['user_name'])) {
+        return '../html/login.php';
+    }
+
+    if (isset($_SESSION['admin_name'])) {
+        return '../dashboard/admin_page.php';
+    } else {
+        return '../html/user.php';
+    }
 }
 
-if (isset($_SESSION['admin_name'])) {
-return '../dashboard/admin_page.php';
-} else {
-return '../html/user.php';
-}
-}
+
+mysqli_close($conn);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +31,8 @@ return '../html/user.php';
     <link rel="stylesheet" href="../css/globals.css">
     <link rel="shortcut icon" href="../resources/logos/books.png" type="image/x-icon">
     <title>Checkout | MO' BOOKS </title>
+
+    <script src="../js/search.js"></script>
 </head>
 
 <body>
@@ -32,9 +44,13 @@ return '../html/user.php';
                         <h1 class="logo">MO'</h1>
                         <div class="menu-toggle" id="menuToggle">&#9776;</div>
                     </div>
-                    <input type="text" class="search" placeholder="Search for ISBN, name, author">
+                    <form action="search.php" method="GET" class="searchForm">
+                        <input type="text" class="search" id="searchInput" name="query"
+                            placeholder="Search for ISBN, name, author" onkeyup="getSuggestions(this.value)">
+                        <div id="suggestionsContainer"></div>
+                    </form>
                     <div class="icons">
-                        <a href="<?php echo getUserRedirectUrl(); ?>">
+                        <a href="../html/cart.php">
                             <img loading="lazy" src="../resources/logos/shopping.png" class="img-3" />
                         </a>
                         <a href="<?php echo getUserRedirectUrl(); ?>">

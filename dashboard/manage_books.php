@@ -58,11 +58,11 @@ mysqli_close($conn);
                     </span></h2>
                 <p>Manage your books and users.</p>
                 <div class="formGroup">
-                    <a href="manage-books.php" rel="noopener noreferrer"> <input type="submit" name="submit"
+                    <a href="manage_books.php" rel="noopener noreferrer"> <input type="submit" name="submit"
                             class="btnDashboard" value="Manage Books"></a>
                 </div>
                 <div class="formGroup">
-                    <a href="manage-users.php" rel="noopener noreferrer"><input type="submit" name="submit"
+                    <a href="manage_users.php" rel="noopener noreferrer"><input type="submit" name="submit"
                             class="btnDashboard" value="Manage Users"></a>
                 </div>
                 <div class="formGroup">

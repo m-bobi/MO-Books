@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
     </div>
 </body>
 
-<!-- <script src="../js/signupValidation.js" defer></script> -->
+
 </body>
 
 </html>
