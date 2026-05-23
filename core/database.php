@@ -7,7 +7,7 @@ class Database
     private $password = '';
     private $database = 'user_db';
     private $conn;
-
+// hey this is a test
     public function tryConnection()
     {
         $this->conn = mysqli_connect($this->host, $this->username, $this->password, $this->database);
