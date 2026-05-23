@@ -1,4 +1,4 @@
-# MO' Books test
+# MO' Books
 Welcome to MO' Books, your go-to online bookstore for a wide selection of captivating reads. Explore a diverse collection of books spanning various genres, from thrilling mysteries to heartwarming tales. Discover your next literary adventure with MO' Books – where stories come to life.
 
 ## Key Features:
